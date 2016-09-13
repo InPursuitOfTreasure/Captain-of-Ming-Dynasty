@@ -10,33 +10,32 @@ import SpriteKit
 
 class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         
-        self.addChild(myLabel)
+        self.backgroundColor = SKColor(red: 1, green: 0.9, blue: 0.7, alpha: 1)
+        
+        let myLabel1 = SKLabelNode(fontNamed:"STKaiti")
+        myLabel1.text = "大明百夫长"
+        myLabel1.fontSize = 45
+        myLabel1.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        
+        self.addChild(myLabel1)
+        
+        let myLabel2 = SKLabelNode(fontNamed:"Chalkduster")
+        myLabel2.text = "Captain of Ming Dynasty"
+        myLabel2.fontSize = 45
+        myLabel2.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)+60)
+        
+        self.addChild(myLabel2)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
         
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+        //after touch, turn to the next scene
+        let mapScene = MapScene(size: self.size)
+        
+        let doors = SKTransition.fadeWithDuration(0.5)
+        
+        self.view?.presentScene(mapScene, transition: doors)
     }
    
     override func update(currentTime: CFTimeInterval) {
