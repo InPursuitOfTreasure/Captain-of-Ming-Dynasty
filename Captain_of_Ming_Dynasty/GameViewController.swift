@@ -13,7 +13,6 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if let scene = GameScene(fileNamed:"GameScene") {
             // Configure the view.
             let skView = self.view as! SKView
@@ -24,7 +23,7 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+            //scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
         }
