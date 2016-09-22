@@ -9,7 +9,7 @@
 import SpriteKit
 class MapScene : SKScene {
     override func didMoveToView(view: SKView) {
-        self.backgroundColor = SKColor(red: 1, green: 0.9, blue: 0.7, alpha: 1)
+        //self.backgroundColor = SKColor(red: 1, green: 0.9, blue: 0.7, alpha: 1)
         
         let spriteNode = SKSpriteNode(imageNamed:"Background")
         

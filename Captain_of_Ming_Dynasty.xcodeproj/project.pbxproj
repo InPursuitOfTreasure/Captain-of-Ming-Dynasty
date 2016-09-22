@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E915B231D879035002A364B /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E915B211D879035002A364B /* Background.jpg */; };
-		7E915B241D879035002A364B /* 百夫长.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E915B221D879035002A364B /* 百夫长.png */; };
 		7E915B261D879454002A364B /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E915B251D879454002A364B /* MapScene.swift */; };
 		7EC265BD1D878E2A00E52174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC265BC1D878E2A00E52174 /* AppDelegate.swift */; };
 		7EC265BF1D878E2A00E52174 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265BE1D878E2A00E52174 /* GameScene.sks */; };
@@ -20,8 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E915B211D879035002A364B /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
-		7E915B221D879035002A364B /* 百夫长.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "百夫长.png"; sourceTree = "<group>"; };
 		7E915B251D879454002A364B /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
 		7EC265B91D878E2A00E52174 /* Captain_of_Ming_Dynasty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Captain_of_Ming_Dynasty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC265BC1D878E2A00E52174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +52,6 @@
 		7E915B201D879035002A364B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				7E915B211D879035002A364B /* Background.jpg */,
-				7E915B221D879035002A364B /* 百夫长.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -153,10 +147,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E915B241D879035002A364B /* 百夫长.png in Resources */,
 				7EC265BF1D878E2A00E52174 /* GameScene.sks in Resources */,
 				7EC265CB1D878E2A00E52174 /* LaunchScreen.storyboard in Resources */,
-				7E915B231D879035002A364B /* Background.jpg in Resources */,
 				7EC265C81D878E2A00E52174 /* Assets.xcassets in Resources */,
 				7EC265C61D878E2A00E52174 /* Main.storyboard in Resources */,
 			);
