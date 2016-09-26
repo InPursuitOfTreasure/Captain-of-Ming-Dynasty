@@ -15,6 +15,14 @@
 		7EC265C61D878E2A00E52174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265C41D878E2A00E52174 /* Main.storyboard */; };
 		7EC265C81D878E2A00E52174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265C71D878E2A00E52174 /* Assets.xcassets */; };
 		7EC265CB1D878E2A00E52174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265C91D878E2A00E52174 /* LaunchScreen.storyboard */; };
+		7EEA04731D9515AA00422082 /* npc1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA046A1D9515AA00422082 /* npc1.png */; };
+		7EEA04741D9515AA00422082 /* npc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA046B1D9515AA00422082 /* npc2.png */; };
+		7EEA04751D9515AA00422082 /* npc3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA046C1D9515AA00422082 /* npc3.png */; };
+		7EEA04761D9515AA00422082 /* npc4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA046D1D9515AA00422082 /* npc4.png */; };
+		7EEA04771D9515AA00422082 /* captain1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA046F1D9515AA00422082 /* captain1.png */; };
+		7EEA04781D9515AA00422082 /* captain2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA04701D9515AA00422082 /* captain2.png */; };
+		7EEA04791D9515AA00422082 /* captain3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA04711D9515AA00422082 /* captain3.png */; };
+		7EEA047A1D9515AA00422082 /* captain4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA04721D9515AA00422082 /* captain4.png */; };
 		7EFDDCF11D93842800FE5ADF /* map_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDDCF01D93842800FE5ADF /* map_small.jpg */; };
 		7EFDDCF31D93868600FE5ADF /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDDCF21D93868600FE5ADF /* map.jpg */; };
 		7EFDDCF51D938CD800FE5ADF /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDDCF41D938CD800FE5ADF /* background.jpg */; };
@@ -32,6 +40,14 @@
 		7EC265C71D878E2A00E52174 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EC265CA1D878E2A00E52174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EC265CC1D878E2A00E52174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EEA046A1D9515AA00422082 /* npc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = npc1.png; sourceTree = "<group>"; };
+		7EEA046B1D9515AA00422082 /* npc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = npc2.png; sourceTree = "<group>"; };
+		7EEA046C1D9515AA00422082 /* npc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = npc3.png; sourceTree = "<group>"; };
+		7EEA046D1D9515AA00422082 /* npc4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = npc4.png; sourceTree = "<group>"; };
+		7EEA046F1D9515AA00422082 /* captain1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captain1.png; sourceTree = "<group>"; };
+		7EEA04701D9515AA00422082 /* captain2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captain2.png; sourceTree = "<group>"; };
+		7EEA04711D9515AA00422082 /* captain3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captain3.png; sourceTree = "<group>"; };
+		7EEA04721D9515AA00422082 /* captain4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captain4.png; sourceTree = "<group>"; };
 		7EFDDCF01D93842800FE5ADF /* map_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map_small.jpg; sourceTree = "<group>"; };
 		7EFDDCF21D93868600FE5ADF /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map.jpg; sourceTree = "<group>"; };
 		7EFDDCF41D938CD800FE5ADF /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -61,6 +77,8 @@
 		7E915B201D879035002A364B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7EEA04691D9515AA00422082 /* npc */,
+				7EEA046E1D9515AA00422082 /* captain */,
 				7EFDDCF21D93868600FE5ADF /* map.jpg */,
 				7EFDDCF01D93842800FE5ADF /* map_small.jpg */,
 				7EFDDCF41D938CD800FE5ADF /* background.jpg */,
@@ -101,6 +119,28 @@
 			path = Captain_of_Ming_Dynasty;
 			sourceTree = "<group>";
 		};
+		7EEA04691D9515AA00422082 /* npc */ = {
+			isa = PBXGroup;
+			children = (
+				7EEA046A1D9515AA00422082 /* npc1.png */,
+				7EEA046B1D9515AA00422082 /* npc2.png */,
+				7EEA046C1D9515AA00422082 /* npc3.png */,
+				7EEA046D1D9515AA00422082 /* npc4.png */,
+			);
+			path = npc;
+			sourceTree = "<group>";
+		};
+		7EEA046E1D9515AA00422082 /* captain */ = {
+			isa = PBXGroup;
+			children = (
+				7EEA046F1D9515AA00422082 /* captain1.png */,
+				7EEA04701D9515AA00422082 /* captain2.png */,
+				7EEA04711D9515AA00422082 /* captain3.png */,
+				7EEA04721D9515AA00422082 /* captain4.png */,
+			);
+			path = captain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,6 +173,7 @@
 				TargetAttributes = {
 					7EC265B81D878E2A00E52174 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -161,9 +202,17 @@
 			files = (
 				7EFDDCF31D93868600FE5ADF /* map.jpg in Resources */,
 				7EFDDCF11D93842800FE5ADF /* map_small.jpg in Resources */,
+				7EEA04731D9515AA00422082 /* npc1.png in Resources */,
+				7EEA047A1D9515AA00422082 /* captain4.png in Resources */,
 				7EFDDCF51D938CD800FE5ADF /* background.jpg in Resources */,
 				7EFDDCF71D93AAAD00FE5ADF /* save.plist in Resources */,
+				7EEA04791D9515AA00422082 /* captain3.png in Resources */,
+				7EEA04751D9515AA00422082 /* npc3.png in Resources */,
 				7EC265BF1D878E2A00E52174 /* GameScene.sks in Resources */,
+				7EEA04781D9515AA00422082 /* captain2.png in Resources */,
+				7EEA04741D9515AA00422082 /* npc2.png in Resources */,
+				7EEA04761D9515AA00422082 /* npc4.png in Resources */,
+				7EEA04771D9515AA00422082 /* captain1.png in Resources */,
 				7EC265CB1D878E2A00E52174 /* LaunchScreen.storyboard in Resources */,
 				7EC265C81D878E2A00E52174 /* Assets.xcassets in Resources */,
 				7EC265C61D878E2A00E52174 /* Main.storyboard in Resources */,
@@ -295,6 +344,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-66.Captain-of-Ming-Dynasty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -306,6 +356,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-66.Captain-of-Ming-Dynasty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
