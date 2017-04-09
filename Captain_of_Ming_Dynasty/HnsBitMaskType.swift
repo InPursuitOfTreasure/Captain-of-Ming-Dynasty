@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class HnsBitMaskType
+{
+    class var me: UInt32 {
+        return 1 << 0
+    }
+    
+    class var building: UInt32 {
+        return 1 << 1
+    }
+    
+    class var river: UInt32 {
+        return 1 << 2
+    }
+}

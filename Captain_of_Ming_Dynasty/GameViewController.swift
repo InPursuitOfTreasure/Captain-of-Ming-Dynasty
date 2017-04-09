@@ -9,11 +9,14 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        if let scene = GameScene(fileNamed:"GameScene") {
+        if let scene = GameScene(fileNamed:"GameScene")
+        {
             // Configure the view.
             let skView = self.view as! SKView
             skView.showsFPS = true
