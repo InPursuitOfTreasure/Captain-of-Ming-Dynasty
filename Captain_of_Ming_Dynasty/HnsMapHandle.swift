@@ -115,7 +115,7 @@ class HnsMapHandle
         river.position = CGPoint.init(x: 987 + x, y: 1314 + y)
         
         river = riverArray[3]
-        river.position = CGPoint.init(x: 784 + x, y: 1184 + y)
+        river.position = CGPoint.init(x: 784 + x, y: 1189 + y)
         
         river = riverArray[4]
         river.position = CGPoint.init(x: 784 + x, y: 739 + y)
@@ -129,6 +129,35 @@ class HnsMapHandle
         river = riverArray[7]
         river.position = CGPoint.init(x: 2400 + x, y: 600 + y)
     }
-    
+    func updateHouse(houseArray: Array<SKSpriteNode>)
+    {
+        let x = HnsMapScene.hnsMapScene.mapNode.position.x
+        let y = HnsMapScene.hnsMapScene.mapNode.position.y
+        
+        var house: SKSpriteNode
+        house = houseArray[0]
+        house.position = CGPoint.init(x: 480 + x, y: 1040 + y)
+        
+        house = houseArray[1]
+        house.position = CGPoint.init(x: 2500 + x, y: 1500 + y)
+        
+        house = houseArray[2]
+        house.position = CGPoint.init(x: 1020 + x, y: 1150 + y)
+        
+        house = houseArray[3]
+        house.position = CGPoint.init(x: 1020 + x, y: 800 + y)
+        
+        house = houseArray[4]
+        house.position = CGPoint.init(x: 1800 + x, y: 1150 + y)
+        
+        house = houseArray[5]
+        house.position = CGPoint.init(x: 1800 + x, y: 800 + y)
+        
+        house = houseArray[6]
+        house.position = CGPoint.init(x: 2244 + x, y: 1150 + y)
+        
+        house = houseArray[7]
+        house.position = CGPoint.init(x: 2244 + x, y: 800 + y)
+    }
 }
 

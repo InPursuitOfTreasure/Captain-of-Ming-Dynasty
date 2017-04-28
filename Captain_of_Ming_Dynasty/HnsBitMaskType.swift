@@ -14,7 +14,7 @@ class HnsBitMaskType
         return 1 << 0
     }
     
-    class var building: UInt32 {
+    class var house: UInt32 {
         return 1 << 1
     }
     

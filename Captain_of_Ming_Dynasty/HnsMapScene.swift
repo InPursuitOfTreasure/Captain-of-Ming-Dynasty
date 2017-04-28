@@ -45,17 +45,28 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
                     HnsRiver().initWithSize(width: 616, height: 80),
                     HnsRiver().initWithSize(width: 600, height: 80),
                     HnsRiver().initWithSize(width: 470, height: 80),
-                    HnsRiver().initWithSize(width:  84, height: 282),
+                    HnsRiver().initWithSize(width:  84, height: 272),
                     HnsRiver().initWithSize(width:  84, height: 333),
                     HnsRiver().initWithSize(width: 470, height: 70),
                     HnsRiver().initWithSize(width: 600, height: 70),
                     HnsRiver().initWithSize(width: 616, height: 70),
                     ]
+    var houseNode: Array<SKSpriteNode> = [
+        HnsHouse().initWithSize(width: 320, height: 210, type: "1", zPosition: -1),
+        HnsHouse().initWithSize(width: 320, height: 210, type: "4", zPosition: -1),
+        HnsHouse().initWithSize(width: 320, height: 210, type: "2", zPosition: -1),
+        HnsHouse().initWithSize(width: 320, height: 210, type: "8", zPosition: 200),
+        HnsHouse().initWithSize(width: 270, height: 210, type: "1", zPosition: -1),
+        HnsHouse().initWithSize(width: 270, height: 210, type: "1", zPosition: 200),
+        HnsHouse().initWithSize(width: 270, height: 210, type: "1", zPosition: -1),
+        HnsHouse().initWithSize(width: 270, height: 210, type: "1", zPosition: 200),
+        ]
     //direction
     //when game begans, captain don't move, so give value 0
     //when scene change and go back, also need value 0, this quesition is not solved until now, recorded on 2016.12.25, marry Charismas.
     var direction: Int = 0
     var oldDirection: Int = 0
+    var backDirection: Int = 0
     
     //handle, many functions to process the data
     var hnsHandle: HnsMapHandle = HnsMapHandle()
@@ -78,6 +89,7 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     {
         updateMapNode(direction: self.direction)
         hnsHandle.updateRiver(riverArray: self.riverNode)
+        hnsHandle.updateHouse(houseArray: self.houseNode)
     }
     
     //when touchs calculate the direction, to move.
@@ -108,8 +120,9 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
             let y = arr[1] as! CGFloat
             
             self.mapNode.position = CGPoint(x: x, y: y)
-            self.mapNode.zPosition = -1
+            self.mapNode.zPosition = -100
             self.hnsHandle.updateRiver(riverArray: self.riverNode)
+            self.hnsHandle.updateHouse(houseArray: self.houseNode)
             
             DispatchQueue.main.async
             {
@@ -118,6 +131,10 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
                 for i in 0 ... self.riverNode.count-1
                 {
                     self.addChild(self.riverNode[i])
+                }
+                for i in 0 ... self.houseNode.count-1
+                {
+                    self.addChild(self.houseNode[i])
                 }
                 self.addChild(self.mapNode)
             }
@@ -133,9 +150,10 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
             self.meNode.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
             self.meNode.physicsBody = SKPhysicsBody.init(rectangleOf: self.meNode.frame.size)
             self.meNode.physicsBody?.categoryBitMask = HnsBitMaskType.me
-            self.meNode.physicsBody?.contactTestBitMask = HnsBitMaskType.river
+            self.meNode.physicsBody?.contactTestBitMask = HnsBitMaskType.house
             self.meNode.physicsBody?.allowsRotation = false
             self.meNode.physicsBody?.affectedByGravity = false
+            self.mapNode.zPosition = 150
             
             DispatchQueue.main.async
             {
@@ -150,6 +168,8 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
         DispatchQueue(label: "com.hns.timeLabelQueue").async
         {
             HnsTimeLabel().initTimeLabel(width: Int(self.frame.width))
+            HnsTimeLabel.timeLabel.zPosition = 1000
+            HnsTimeLabel.timeText .zPosition = 1001
             
             DispatchQueue.main.async
             {
@@ -202,30 +222,41 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     
     func didBegin(_ contact: SKPhysicsContact)
     {
-//        if  (contact.bodyA.categoryBitMask == HnsBitMaskType.river) ||
-//            (contact.bodyB.categoryBitMask == HnsBitMaskType.river)
-//        {
-//            hnsHandle.updateRiver(riverArray: riverNode)
-//            self.meNode.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-//            let node: HnsRiver = contact.bodyA.node as! HnsRiver
-//            node.contactDirection = 0
-//            node.contactFlag = false
-//        }
         if  contact.bodyA.categoryBitMask == HnsBitMaskType.river
             ||
             contact.bodyB.categoryBitMask == HnsBitMaskType.river
         {
-            oldDirection = -direction
-            updateMapNode(direction: -direction)
+            backDirection = -direction
             direction = 0
             oldDirection = 0
-            hnsHandle.updateRiver(riverArray: riverNode)
-            self.meNode.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         }
+        if  contact.bodyA.categoryBitMask == HnsBitMaskType.house
+            ||
+            contact.bodyB.categoryBitMask == HnsBitMaskType.house
+        {
+            backDirection = -direction
+            direction = 0
+            oldDirection = 0
+        }
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact)
+    {
+        backDirection = 0
+        direction = 0
+        oldDirection = 0
+        self.meNode.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
     }
     
     func updateMapNode(direction: Int)
     {
+        if backDirection != 0
+        {
+            if direction != backDirection && direction != 0
+            {
+                return
+            }
+        }
         var x: CGFloat = mapNode.position.x
         var y: CGFloat = mapNode.position.y
         switch direction
@@ -270,7 +301,12 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
                 oldDirection = direction
                 meNode.texture = texture4
             }
-        default: return
+        default:
+            if backDirection != 0
+            {
+                self.direction = backDirection
+                oldDirection = backDirection
+            }
         }
         mapNode.position = CGPoint(x: x, y: y)
     }

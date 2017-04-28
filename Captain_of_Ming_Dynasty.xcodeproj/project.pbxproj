@@ -14,8 +14,13 @@
 		7E0456F81E7329170049D143 /* HnsMapHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0456F61E7329170049D143 /* HnsMapHandle.swift */; };
 		7E0456FB1E741B290049D143 /* timeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0456FA1E741B290049D143 /* timeBackground.png */; };
 		7E45A11B1E78460B00D9C903 /* HnsBitMaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E45A11A1E78460B00D9C903 /* HnsBitMaskType.swift */; };
-		7E8402991E88F02F000DB5A0 /* HnsRiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8402981E88F02F000DB5A0 /* HnsRiver.swift */; };
 		7E915B261D879454002A364B /* HnsMapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E915B251D879454002A364B /* HnsMapScene.swift */; };
+		7EBEC2921EA28E5C00CC6F73 /* house_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC28D1EA28E5C00CC6F73 /* house_0.png */; };
+		7EBEC2931EA28E5C00CC6F73 /* house_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC28E1EA28E5C00CC6F73 /* house_1.png */; };
+		7EBEC2941EA28E5C00CC6F73 /* house_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC28F1EA28E5C00CC6F73 /* house_2.png */; };
+		7EBEC2951EA28E5C00CC6F73 /* house_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC2901EA28E5C00CC6F73 /* house_4.png */; };
+		7EBEC2961EA28E5C00CC6F73 /* house_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC2911EA28E5C00CC6F73 /* house_8.png */; };
+		7EBEC2A01EA4B43F00CC6F73 /* HnsMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBEC29E1EA4B43F00CC6F73 /* HnsMapNode.swift */; };
 		7EC265BD1D878E2A00E52174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC265BC1D878E2A00E52174 /* AppDelegate.swift */; };
 		7EC265BF1D878E2A00E52174 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265BE1D878E2A00E52174 /* GameScene.sks */; };
 		7EC265C11D878E2A00E52174 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC265C01D878E2A00E52174 /* GameScene.swift */; };
@@ -44,8 +49,13 @@
 		7E0456F61E7329170049D143 /* HnsMapHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapHandle.swift; sourceTree = "<group>"; };
 		7E0456FA1E741B290049D143 /* timeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeBackground.png; sourceTree = "<group>"; };
 		7E45A11A1E78460B00D9C903 /* HnsBitMaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsBitMaskType.swift; sourceTree = "<group>"; };
-		7E8402981E88F02F000DB5A0 /* HnsRiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsRiver.swift; sourceTree = "<group>"; };
 		7E915B251D879454002A364B /* HnsMapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapScene.swift; sourceTree = "<group>"; };
+		7EBEC28D1EA28E5C00CC6F73 /* house_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_0.png; sourceTree = "<group>"; };
+		7EBEC28E1EA28E5C00CC6F73 /* house_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_1.png; sourceTree = "<group>"; };
+		7EBEC28F1EA28E5C00CC6F73 /* house_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_2.png; sourceTree = "<group>"; };
+		7EBEC2901EA28E5C00CC6F73 /* house_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_4.png; sourceTree = "<group>"; };
+		7EBEC2911EA28E5C00CC6F73 /* house_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_8.png; sourceTree = "<group>"; };
+		7EBEC29E1EA4B43F00CC6F73 /* HnsMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapNode.swift; sourceTree = "<group>"; };
 		7EC265B91D878E2A00E52174 /* Captain_of_Ming_Dynasty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Captain_of_Ming_Dynasty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC265BC1D878E2A00E52174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EC265BE1D878E2A00E52174 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -94,18 +104,10 @@
 			children = (
 				7E915B251D879454002A364B /* HnsMapScene.swift */,
 				7E0456F61E7329170049D143 /* HnsMapHandle.swift */,
-				7E8402971E88F00B000DB5A0 /* HnsRiver */,
+				7EBEC29C1EA4B43F00CC6F73 /* HnsMapNode */,
 				7EF5AB851E6806EC00B31219 /* HnsTimeLabel */,
 			);
 			name = "游戏界面";
-			sourceTree = "<group>";
-		};
-		7E8402971E88F00B000DB5A0 /* HnsRiver */ = {
-			isa = PBXGroup;
-			children = (
-				7E8402981E88F02F000DB5A0 /* HnsRiver.swift */,
-			);
-			path = HnsRiver;
 			sourceTree = "<group>";
 		};
 		7E915B1F1D879035002A364B /* Resources */ = {
@@ -120,6 +122,7 @@
 		7E915B201D879035002A364B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7EBEC28C1EA28E5C00CC6F73 /* house */,
 				7EEA04691D9515AA00422082 /* npc */,
 				7EEA046E1D9515AA00422082 /* captain */,
 				7EFDDCF21D93868600FE5ADF /* map.jpg */,
@@ -128,6 +131,26 @@
 				7E0456FA1E741B290049D143 /* timeBackground.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		7EBEC28C1EA28E5C00CC6F73 /* house */ = {
+			isa = PBXGroup;
+			children = (
+				7EBEC28D1EA28E5C00CC6F73 /* house_0.png */,
+				7EBEC28E1EA28E5C00CC6F73 /* house_1.png */,
+				7EBEC28F1EA28E5C00CC6F73 /* house_2.png */,
+				7EBEC2901EA28E5C00CC6F73 /* house_4.png */,
+				7EBEC2911EA28E5C00CC6F73 /* house_8.png */,
+			);
+			path = house;
+			sourceTree = "<group>";
+		};
+		7EBEC29C1EA4B43F00CC6F73 /* HnsMapNode */ = {
+			isa = PBXGroup;
+			children = (
+				7EBEC29E1EA4B43F00CC6F73 /* HnsMapNode.swift */,
+			);
+			path = HnsMapNode;
 			sourceTree = "<group>";
 		};
 		7EC265B01D878E2A00E52174 = {
@@ -256,14 +279,19 @@
 				7EFDDCF31D93868600FE5ADF /* map.jpg in Resources */,
 				7EFDDCF11D93842800FE5ADF /* map_small.jpg in Resources */,
 				7EEA04731D9515AA00422082 /* npc1.png in Resources */,
+				7EBEC2961EA28E5C00CC6F73 /* house_8.png in Resources */,
+				7EBEC2941EA28E5C00CC6F73 /* house_2.png in Resources */,
 				7E0456F11E73289A0049D143 /* captain4.png in Resources */,
 				7EFDDCF51D938CD800FE5ADF /* background.jpg in Resources */,
 				7EFDDCF71D93AAAD00FE5ADF /* save.plist in Resources */,
 				7E0456F01E73289A0049D143 /* captain3.png in Resources */,
+				7EBEC2951EA28E5C00CC6F73 /* house_4.png in Resources */,
 				7EEA04751D9515AA00422082 /* npc3.png in Resources */,
 				7EC265BF1D878E2A00E52174 /* GameScene.sks in Resources */,
 				7E0456EF1E73289A0049D143 /* captain2.png in Resources */,
 				7EEA04741D9515AA00422082 /* npc2.png in Resources */,
+				7EBEC2921EA28E5C00CC6F73 /* house_0.png in Resources */,
+				7EBEC2931EA28E5C00CC6F73 /* house_1.png in Resources */,
 				7EEA04761D9515AA00422082 /* npc4.png in Resources */,
 				7E0456EE1E73289A0049D143 /* captain1.png in Resources */,
 				7EC265CB1D878E2A00E52174 /* LaunchScreen.storyboard in Resources */,
@@ -283,12 +311,12 @@
 				7EF5AB8C1E6808AC00B31219 /* HnsTimeLabel.swift in Sources */,
 				7EC265C11D878E2A00E52174 /* GameScene.swift in Sources */,
 				7E45A11B1E78460B00D9C903 /* HnsBitMaskType.swift in Sources */,
+				7EBEC2A01EA4B43F00CC6F73 /* HnsMapNode.swift in Sources */,
 				7E915B261D879454002A364B /* HnsMapScene.swift in Sources */,
 				7EEE63431E7793A700183CDA /* TestCoreGraphics.swift in Sources */,
 				7EC265C31D878E2A00E52174 /* GameViewController.swift in Sources */,
 				7EF5AB8E1E68091800B31219 /* HnsTimeHandle.swift in Sources */,
 				7EC265BD1D878E2A00E52174 /* AppDelegate.swift in Sources */,
-				7E8402991E88F02F000DB5A0 /* HnsRiver.swift in Sources */,
 				7E0456F81E7329170049D143 /* HnsMapHandle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
