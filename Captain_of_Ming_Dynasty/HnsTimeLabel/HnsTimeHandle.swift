@@ -67,7 +67,7 @@ class HnsTimeHandle
         
         return str
     }
-    func getTimeDic() -> Dictionary<String, Int>
+    func getTimeDic()
     {
         let filePath: String = NSHomeDirectory() + "/Documents/save.plist"
         var dic = NSDictionary(contentsOfFile: filePath)
@@ -76,11 +76,11 @@ class HnsTimeHandle
             HnsMapHandle().reset()
             dic = NSDictionary(contentsOfFile: filePath)
         }
-        return dic!.object(forKey: "time") as! Dictionary<String, Int>
+        HnsTimeLabel.timeDic = dic!.object(forKey: "time") as! Dictionary<String, Int>
     }
     func getTimeDicAsNumber() -> Int
     {
-        let timeDic = getTimeDic()
+        let timeDic = HnsTimeLabel.timeDic
         var time:Int = timeDic["year"]! * 10000
         time += timeDic["month"]! * 100
         time += timeDic["day"]!

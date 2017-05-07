@@ -97,7 +97,7 @@ class HnsMapHandle
         let time = HnsTimeLabel.timeDic
         
         var dic: NSDictionary? = nil
-        if HnsTask.task.progress == 0
+        if HnsTask.task.progress == 0 || HnsTask.task.progress == 2
         {
             let task = ["tid": HnsTask.task.tid - 1, "progress": 0]
             dic = [ "position": arry,
@@ -107,7 +107,7 @@ class HnsMapHandle
         }
         else
         {
-            let task = ["tid": HnsTask.task.tid, "progress": 0]
+            let task = ["tid": HnsTask.task.tid, "progress": 1]
             dic = [ "position": arry,
                     "time": time,
                     "task": task,
@@ -189,7 +189,7 @@ class HnsMapHandle
         hour += 1
         if hour > 12
         {
-            
+            ifFinishTask()
             ifDie()
             ifTask()
             hour = 1
@@ -204,6 +204,16 @@ class HnsMapHandle
                     year += 1
                 }
             }
+        }
+        if HnsTimeHandle().getTimeDicAsNumber() == 16450101
+        {
+            HnsIntroScene.introScene.nextScene = HnsMapScene.mapScene
+            HnsIntroScene.introScene.tag = 16
+            
+            let doors = SKTransition.fade(withDuration: 0.7)
+            HnsMapScene.mapScene.view?.presentScene(HnsIntroScene.introScene, transition: doors)
+            
+            die()
         }
         HnsTimeLabel.timeDic["year"]    = year + 1628
         HnsTimeLabel.timeDic["month"]   = month
@@ -234,25 +244,28 @@ class HnsMapHandle
         for i in 0...HnsInnerScene.innerScene.npcArray.count-1
         {
             let npc = HnsInnerScene.innerScene.npcArray[i]
-            if npc.dailyTask == 1
+            if npc.dailyTask != 0
             {
                 flag = false
             }
         }
         if flag
         {
-            HnsTask.task.progress = 2
+            HnsTask.task.progress = 0
+            HnsSqlite3.sqlHandle.loadtask(tid: HnsTask.task.tid+1, task: HnsTask.task)
         }
     }
     
     func ifTask()
     {
         let time = HnsTimeHandle().getTimeDicAsNumber()
+        let type = HnsTask.task.type
         if HnsTask.task.time == time + 1
             && HnsTask.task.progress == 0
         {
+            HnsTask.task.progress = 1
             let array = ["通告:  " + HnsTask.task.intro,
-                         HnsTask.task.affectPeople(type: HnsTask.task.type)+"受到影响",
+                         HnsTask.task.affectPeople(type: type)+"受到影响",
                          "民心" + String (HnsTask.task.affect),
                          HnsTask.task.taskType(taskType: HnsTask.task.taskType) + "或许可以挽回民心"]
             HnsIntroScene.introScene.textArray = array
@@ -261,17 +274,17 @@ class HnsMapHandle
             
             let doors = SKTransition.fade(withDuration: 0.7)
             HnsMapScene.mapScene.view?.presentScene(HnsIntroScene.introScene, transition: doors)
-            HnsTask.task.progress = 1
         }
-        if HnsTask.task.time == time + HnsTask.task.days + 1
+        if HnsTask.task.time == time - HnsTask.task.days + 1
         {
-            HnsTask.task.progress = 2
             let arr = HnsInnerScene.innerScene.npcArray
             for i in 0 ... arr.count - 1
             {
                 let npc = arr[i]
                 npc.dailyTask = 0
             }
+            HnsTask.task.progress = 0
+            HnsSqlite3.sqlHandle.loadtask(tid: HnsTask.task.tid+1, task: HnsTask.task)
         }
     }
 }

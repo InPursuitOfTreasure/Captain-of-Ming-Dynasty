@@ -84,16 +84,17 @@ class HnsIntroScene: SKScene
             removeTimer()
             i += 1
             j += 1
-            if j == 7
-            {
-                sleep(1)
-                j = 0
-                for item in introNode {
-                    item.text = ""
-                }
-            }
+            
             if i < (textArray?.count)!
             {
+                if j == 7
+                {
+                    sleep(1)
+                    j = 0
+                    for item in introNode {
+                        item.text = ""
+                    }
+                }
                 setString(text: (textArray?[i])!, node: introNode[j])
             }
             else

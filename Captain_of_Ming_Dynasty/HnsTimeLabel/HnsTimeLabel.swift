@@ -27,8 +27,6 @@ class HnsTimeLabel
     {
         if HnsTimeLabel.timeDic["year"] == 0
         {
-            HnsTimeLabel.timeDic = hnsHandle.getTimeDic()
-            
             HnsTimeLabel.timeText.text = hnsHandle.calendar(time: HnsTimeLabel.timeDic)
             HnsTimeLabel.timeText.fontColor = SKColor.black
             HnsTimeLabel.timeText.fontSize  = 24

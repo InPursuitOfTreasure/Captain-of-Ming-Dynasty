@@ -12,6 +12,7 @@ func die()
 {
     HnsMapScene.mapScene.removeTimer()
     HnsMapHandle().reset()
+    HnsTimeHandle().getTimeDic()
     HnsSqlite3.sqlHandle.deleteData()
     HnsInnerScene.innerScene.reloadNpc()
 }

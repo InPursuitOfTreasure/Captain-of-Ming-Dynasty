@@ -31,7 +31,6 @@
 		<string>为了帮侄儿李自成置田，高迎祥耗尽积蓄</string>
 		<string>他现在是个农夫</string>
 		<string>他现在家徒四壁</string>
-		<string>点击与之对话</string>
 	</array>
 	<key>farmer3</key>
 	<array>
@@ -41,7 +40,6 @@
 		<string>叛乱中抢得一点金银，在这里买田安家</string>
 		<string>他现在是个农夫</string>
 		<string>他现在家徒四壁</string>
-		<string>点击与之对话</string>
 	</array>
 	<key>farmer4</key>
 	<array>
@@ -49,7 +47,6 @@
 		<string>去年大旱，颗粒无收，典尽家当才交齐春赋</string>
 		<string>他现在是个农夫</string>
 		<string>他现在家徒四壁</string>
-		<string>点击与之对话</string>
 	</array>
 	<key>shopkeeper</key>
 	<array>
@@ -59,7 +56,6 @@
 		<string>现在白手起家，什么买卖都做</string>
 		<string>他现在是个掌柜</string>
 		<string>他现在家徒四壁</string>
-		<string>点击与之对话</string>
 	</array>
 	<key>carpenter</key>
 	<array>
@@ -68,7 +64,6 @@
 		<string>为脱离匠籍，曾尽家资读书以求高中，然并</string>
 		<string>他现在是个木匠</string>
 		<string>他现在家徒四壁</string>
-		<string>点击与之对话</string>
 	</array>
 	<key>ironsmith</key>
 	<array>
@@ -77,7 +72,6 @@
 		<string>起义前，不忍饿殍遍地，便已散尽家财</string>
 		<string>他现在是个铁匠</string>
 		<string>他现在家徒四壁</string>
-		<string>点击与之对话</string>
 	</array>
 	<key>end0</key>
 	<array>
@@ -134,6 +128,12 @@
 		<string>官逼民反</string>
 		<string>百户被王二铁锤击杀</string>
 		<string>王二于澄城立寨，称梁山，陕西好汉齐反</string>
+		<string>游戏结束</string>
+	</array>
+	<key>end8</key>
+	<array>
+		<string>恭喜活到清朝</string>
+		<string></string>
 		<string>游戏结束</string>
 	</array>
 </dict>

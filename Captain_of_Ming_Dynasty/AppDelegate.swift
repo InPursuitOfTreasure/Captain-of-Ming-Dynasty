@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         HnsSqlite3.sqlHandle.openDB()
         HnsTask.task.loadTask()
         HnsTask().loadGoodDic()
+        HnsTimeHandle().getTimeDic()
         
         HnsInnerScene.innerScene.size = (window?.frame.size)!
         HnsInnerScene.innerScene.create_background_npcNode()

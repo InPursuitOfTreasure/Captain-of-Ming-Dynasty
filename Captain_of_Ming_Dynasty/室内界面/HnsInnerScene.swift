@@ -29,7 +29,8 @@ class HnsInnerScene: SKScene
     var taskNodeArr = [SKSpriteNode.init(imageNamed: "task1"),
                        SKSpriteNode.init(imageNamed: "task2"),
                        SKSpriteNode.init(imageNamed: "task3"),
-                       SKSpriteNode.init(imageNamed: "task4"),]
+                       SKSpriteNode.init(imageNamed: "task4"),
+                       SKSpriteNode.init(imageNamed: "task5"),]
     
     func create_background_npcNode()
     {
@@ -155,6 +156,7 @@ class HnsInnerScene: SKScene
                 talkText.text = taskString(key: "99")
                 talkNode.isHidden = false
                 npcArray[tag-1].dailyTask = 0
+                npcArray[tag-1].will += 10
                 taskNodeArr[1].isHidden = true
                 wood -= 1
                 HnsTask.goodDic["wood"] = wood
@@ -170,21 +172,23 @@ class HnsInnerScene: SKScene
             talkText.text = taskString()
             talkNode.isHidden = false
             npcArray[tag-1].dailyTask = 0
+            npcArray[tag-1].will += 5
             taskNodeArr[1].isHidden = true
         }
         else if node?.name == "task2"
         {
-            var silver = HnsTask.goodDic["silver"]! as Int
+            let silver = HnsTask.goodDic["silver"]! as Int
             let food = HnsTask.goodDic["food"]! as Int
-            if silver > 0
+            if silver > 20
             {
+                let r = arc4random() % 10
                 talkText.text = taskString(key: "99")
                 talkNode.isHidden = false
                 npcArray[tag-1].dailyTask = 0
+                npcArray[tag-1].will += 10
                 taskNodeArr[2].isHidden = true
-                silver -= 1
-                HnsTask.goodDic["silver"] = silver
-                HnsTask.goodDic["food"] = food + 1
+                HnsTask.goodDic["silver"] = silver - Int(r)
+                HnsTask.goodDic["food"] = food + Int(r * 10)
             }
             else
             {
@@ -194,6 +198,23 @@ class HnsInnerScene: SKScene
         }
         else if node?.name == "task3"
         {
+            let food = HnsTask.goodDic["food"]! as Int
+            if food > 0
+            {
+                talkText.text = taskString(key: "99")
+                talkNode.isHidden = false
+                npcArray[tag-1].dailyTask = 0
+                taskNodeArr[3].isHidden = true
+                HnsTask.goodDic["food"] = food - 10
+            }
+            else
+            {
+                talkText.text = taskString(key: "00")
+                talkNode.isHidden = false
+            }
+        }
+        else if node?.name == "task4"
+        {
             var iron = HnsTask.goodDic["iron"]! as Int
             if iron > 0
             {
@@ -201,7 +222,7 @@ class HnsInnerScene: SKScene
                 talkNode.isHidden = false
                 npcArray[tag-1].dailyTask = 0
                 taskNodeArr[3].isHidden = true
-                iron -= 1
+                iron -= 10
                 HnsTask.goodDic["iron"] = iron
             }
             else

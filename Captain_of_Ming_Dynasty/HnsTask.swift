@@ -27,21 +27,25 @@ class HnsTask
     
     func affectPeople(type: Int) -> String
     {
+        if HnsTask.task.progress == 0
+        {
+            return "暂无"
+        }
         var t = type
         var flag = false
         var str: String = ""
         let arr = HnsInnerScene.innerScene.npcArray
         let aff = HnsTask.task.affect
-        let type = HnsTask.task.taskType
+        let att = HnsTask.task.taskType
         if t > 7 {
-            arr[6].dailyTask = type
+            arr[6].dailyTask = att
             arr[6].will += aff
             t -= 8
             str = "铁匠"
             flag = true
         }
         if t > 3 {
-            arr[5].dailyTask = type
+            arr[5].dailyTask = att
             arr[5].will += aff
             t -= 4
             if flag
@@ -55,7 +59,7 @@ class HnsTask
             }
         }
         if t > 1 {
-            arr[4].dailyTask = type
+            arr[4].dailyTask = att
             arr[4].will += aff
             t -= 2
             if flag
@@ -69,15 +73,14 @@ class HnsTask
             }
         }
         if t > 0 {
-            arr[3].dailyTask = type
-            arr[2].dailyTask = type
-            arr[1].dailyTask = type
-            arr[0].dailyTask = type
+            arr[3].dailyTask = att
+            arr[2].dailyTask = att
+            arr[1].dailyTask = att
+            arr[0].dailyTask = att
             arr[3].will += aff
             arr[2].will += aff
             arr[1].will += aff
             arr[0].will += aff
-            t -= 1
             if flag
             {
                 str += "、农夫"

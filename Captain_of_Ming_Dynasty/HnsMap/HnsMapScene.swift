@@ -48,6 +48,13 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     var alertOk = SKSpriteNode.init(imageNamed: "alertok")
     var alertCancel = SKSpriteNode.init(imageNamed: "alertCancel")
     
+    var textNode: Array<SKLabelNode> = [
+        SKLabelNode(fontNamed:"STKaiti"),
+        SKLabelNode(fontNamed:"STKaiti"),
+        SKLabelNode(fontNamed:"STKaiti"),
+        ]
+    var textBackground = SKSpriteNode.init(imageNamed: "textBackground")
+    
     var riverNode: Array<SKSpriteNode> = [
                     HnsRiver().initWithSize(width: 616, height: 80),
                     HnsRiver().initWithSize(width: 600, height: 80),
@@ -131,9 +138,9 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
         else if contactTag == 8
         {
             let iron = HnsTask.goodDic["iron"]! as Int
-            HnsTask.goodDic["iron"] = iron + 5
+            HnsTask.goodDic["iron"] = iron + 1
             let silver = HnsTask.goodDic["silver"]! as Int
-            let r = arc4random() % 10
+            let r = arc4random() % 20
             if r == 1
             {
                 HnsTask.goodDic["silver"] = silver + 1
@@ -144,7 +151,7 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
         else if contactTag == 9
         {
             let wood = HnsTask.goodDic["wood"]! as Int
-            HnsTask.goodDic["wood"] = wood + 5
+            HnsTask.goodDic["wood"] = wood + 1
             handleTimeDic()
             backDirection = 0
             direction = 0
@@ -174,21 +181,37 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     {
         DispatchQueue(label: "com.hns.alertQueue").async
             {
+                let x = self.frame.midX
+                var y = 300
+                
                 self.alertNode.size = CGSize(width: self.frame.width, height: 200)
-                self.alertNode.position = CGPoint(x: self.frame.midX, y: 100)
+                self.alertNode.position = CGPoint(x: x, y: 100)
                 self.alertNode.zPosition = 1002
                 
                 self.alertText.fontSize = 24
                 self.alertText.fontColor = SKColor.black
                 self.alertText.zPosition = 1003
                 
+                for i in 0 ... self.textNode.count - 1
+                {
+                    self.textNode[i].fontSize = 24
+                    self.textNode[i].fontColor = SKColor.black
+                    self.textNode[i].position = CGPoint(x: x + 70, y: CGFloat(y))
+                    self.textNode[i].zPosition = 1004
+                    y -= 40
+                }
+                self.textBackground.size = CGSize(width: 420, height: 150)
+                self.textBackground.position = CGPoint(x: x + 70, y: 270)
+                self.textBackground.zPosition = 1000
+                self.textBackground.isHidden = true
+                
                 self.alertOk.size = CGSize(width: 100, height: 40)
-                self.alertOk.position = CGPoint(x: self.frame.midX - 120, y: 50)
+                self.alertOk.position = CGPoint(x: x - 120, y: 50)
                 self.alertOk.zPosition = 1003
                 self.alertOk.name = "ok"
                 
                 self.alertCancel.size = CGSize(width: 100, height: 40)
-                self.alertCancel.position = CGPoint(x: self.frame.midX + 120, y: 50)
+                self.alertCancel.position = CGPoint(x: x + 120, y: 50)
                 self.alertCancel.zPosition = 1003
                 self.alertCancel.name = "cancel"
                 
@@ -200,6 +223,12 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
                         self.addChild(self.alertText)
                         self.addChild(self.alertOk)
                         self.addChild(self.alertCancel)
+                        
+                        for i in 0 ... self.textNode.count - 1
+                        {
+                            self.addChild(self.textNode[i])
+                        }
+                        self.addChild(self.textBackground)
                 }
         }
     }
@@ -303,16 +332,40 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
 
     override func didMove(to view: SKView)
     {
-        HnsTimeLabel.timeDic = HnsTimeHandle().getTimeDic()
         mapNode.position = hnsHandle.getPosition()
         HnsTimeLabel().updateTimeLabel()
         addTimer()
+        
+        let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        self.view?.addGestureRecognizer(longpress)
     }
     
     func handleTimeDic()
     {
         hnsHandle.updateTimeDic()
         HnsTimeLabel().updateTimeLabel()
+    }
+    
+    func longPress() {
+        var x: CGFloat = touchLocation.x
+        var y: CGFloat = touchLocation.y
+        x -= 368
+        y -= 207
+        //long press center of screen, save and exit.
+        if (abs(x) < 30)&&(abs(y) < 30)
+        {
+            let food = HnsTask.goodDic["food"]! as Int
+            let silver = HnsTask.goodDic["silver"]! as Int
+            let iron = HnsTask.goodDic["iron"]! as Int
+            let wood = HnsTask.goodDic["wood"]! as Int
+            let type = HnsTask.task.type as Int
+            
+            textNode[0].text = "粮食  " + String(food) + "  银子  " + String(silver)
+            textNode[1].text = "铁矿  " + String(iron) + "  木材  " + String(wood)
+            textNode[2].text = "任务提示  " + HnsTask.task.affectPeople(type: type)
+            self.textBackground.isHidden = false
+        }
+        removeTimer()
     }
     
     func presentInnerScence(tag: Int)
@@ -340,11 +393,29 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
         timer?.invalidate()
         timer = nil
     }
+    func textHidden() -> Bool
+    {
+        if self.textBackground.isHidden == false
+        {
+            textNode[0].text = ""
+            textNode[1].text = ""
+            textNode[2].text = ""
+            self.textBackground.isHidden = true
+            return true
+        }
+        return false
+    }
     
     //when touchs calculate the direction, to move.
     //judge if there is a npc, or if there needs a click event
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
+        if textHidden()
+        {
+            addTimer()
+            return
+        }
+        
         let hnsTouches = touches as NSSet
         let touch = hnsTouches.anyObject() as! UITouch
         touchLocation = touch.location(in: self)
