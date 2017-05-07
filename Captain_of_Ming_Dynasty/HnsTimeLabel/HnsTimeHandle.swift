@@ -10,13 +10,6 @@ import Foundation
 
 class HnsTimeHandle
 {
-    func getTimeDic() -> Dictionary<String, Int>
-    {
-        let filePath: NSString = NSHomeDirectory().appending("/Documents/save.plist") as NSString
-        let dic = NSDictionary(contentsOfFile: filePath as String)
-        return dic!.object(forKey: "time") as! Dictionary<String, Int>
-    }
-    
     func calendar(time: Dictionary<String, Int>) -> String
     {
         let year = time["year"]! - 1628
@@ -73,5 +66,24 @@ class HnsTimeHandle
         }
         
         return str
+    }
+    func getTimeDic() -> Dictionary<String, Int>
+    {
+        let filePath: String = NSHomeDirectory() + "/Documents/save.plist"
+        var dic = NSDictionary(contentsOfFile: filePath)
+        if dic == nil
+        {
+            HnsMapHandle().reset()
+            dic = NSDictionary(contentsOfFile: filePath)
+        }
+        return dic!.object(forKey: "time") as! Dictionary<String, Int>
+    }
+    func getTimeDicAsNumber() -> Int
+    {
+        let timeDic = getTimeDic()
+        var time:Int = timeDic["year"]! * 10000
+        time += timeDic["month"]! * 100
+        time += timeDic["day"]!
+        return time
     }
 }

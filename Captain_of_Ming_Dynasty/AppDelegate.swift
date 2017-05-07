@@ -14,8 +14,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    {
+        HnsMapScene.mapScene.size = (window?.frame.size)!
+        HnsMapScene.mapScene.createMapNode()
+        HnsMapScene.mapScene.createMeNode()
+        HnsMapScene.mapScene.createTimeLabel()
+        HnsMapScene.mapScene.createAlert()
+        
+        HnsIntroScene.introScene.size = (window?.frame.size)!
+        HnsIntroScene.introScene.create_background_textNode()
+        
+        HnsSqlite3.sqlHandle.openDB()
+        HnsTask.task.loadTask()
+        HnsTask().loadGoodDic()
+        
+        HnsInnerScene.innerScene.size = (window?.frame.size)!
+        HnsInnerScene.innerScene.create_background_npcNode()
+        HnsInnerScene.innerScene.createBedNode()
+        HnsInnerScene.innerScene.createMeNode()
+        HnsInnerScene.innerScene.createTalk()
+        HnsInnerScene.innerScene.reloadNpc()
         return true
     }
 
@@ -24,32 +43,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        let position = HnsMapScene.hnsMapScene.mapNode.position
-        let arr = [position.x, position.y]
-        HnsMapHandle().save(position: arr, time: HnsTimeLabel.timeDic)
-        HnsMapScene.hnsMapScene.removeTimer()
+    func applicationDidEnterBackground(_ application: UIApplication)
+    {
+        HnsMapScene.mapScene.hnsHandle.save()
+        HnsMapScene.mapScene.removeTimer()
+        
+        HnsInnerScene.innerScene.saveToDB()
+        HnsSqlite3.sqlHandle.closeDB()
     }
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        HnsMapScene.hnsMapScene.addTimer()
+    func applicationWillEnterForeground(_ application: UIApplication)
+    {
+        HnsMapScene.mapScene.addTimer()
+        HnsSqlite3.sqlHandle.openDB()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(_ application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication)
+    {
+        HnsMapScene.mapScene.hnsHandle.save()
+        HnsMapScene.mapScene.removeTimer()
         
-        let position = HnsMapScene.hnsMapScene.mapNode.position
-        let arr = [position.x, position.y]
-        HnsMapHandle().save(position: arr, time: HnsTimeLabel.timeDic)
-        HnsMapScene.hnsMapScene.removeTimer()
+        HnsInnerScene.innerScene.saveToDB()
+        HnsSqlite3.sqlHandle.closeDB()
     }
-
-
 }
 

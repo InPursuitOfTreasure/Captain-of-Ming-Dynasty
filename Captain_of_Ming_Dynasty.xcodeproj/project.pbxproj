@@ -11,16 +11,13 @@
 		7E0456EF1E73289A0049D143 /* captain2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0456EB1E73289A0049D143 /* captain2.png */; };
 		7E0456F01E73289A0049D143 /* captain3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0456EC1E73289A0049D143 /* captain3.png */; };
 		7E0456F11E73289A0049D143 /* captain4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0456ED1E73289A0049D143 /* captain4.png */; };
-		7E0456F81E7329170049D143 /* HnsMapHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0456F61E7329170049D143 /* HnsMapHandle.swift */; };
 		7E0456FB1E741B290049D143 /* timeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0456FA1E741B290049D143 /* timeBackground.png */; };
 		7E45A11B1E78460B00D9C903 /* HnsBitMaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E45A11A1E78460B00D9C903 /* HnsBitMaskType.swift */; };
-		7E915B261D879454002A364B /* HnsMapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E915B251D879454002A364B /* HnsMapScene.swift */; };
 		7EBEC2921EA28E5C00CC6F73 /* house_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC28D1EA28E5C00CC6F73 /* house_0.png */; };
 		7EBEC2931EA28E5C00CC6F73 /* house_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC28E1EA28E5C00CC6F73 /* house_1.png */; };
 		7EBEC2941EA28E5C00CC6F73 /* house_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC28F1EA28E5C00CC6F73 /* house_2.png */; };
 		7EBEC2951EA28E5C00CC6F73 /* house_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC2901EA28E5C00CC6F73 /* house_4.png */; };
 		7EBEC2961EA28E5C00CC6F73 /* house_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EBEC2911EA28E5C00CC6F73 /* house_8.png */; };
-		7EBEC2A01EA4B43F00CC6F73 /* HnsMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBEC29E1EA4B43F00CC6F73 /* HnsMapNode.swift */; };
 		7EC265BD1D878E2A00E52174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC265BC1D878E2A00E52174 /* AppDelegate.swift */; };
 		7EC265BF1D878E2A00E52174 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265BE1D878E2A00E52174 /* GameScene.sks */; };
 		7EC265C11D878E2A00E52174 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC265C01D878E2A00E52174 /* GameScene.swift */; };
@@ -28,6 +25,31 @@
 		7EC265C61D878E2A00E52174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265C41D878E2A00E52174 /* Main.storyboard */; };
 		7EC265C81D878E2A00E52174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265C71D878E2A00E52174 /* Assets.xcassets */; };
 		7EC265CB1D878E2A00E52174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC265C91D878E2A00E52174 /* LaunchScreen.storyboard */; };
+		7EC4EAAA1EB5D54C00C17D75 /* alert.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EAA91EB5D54C00C17D75 /* alert.plist */; };
+		7EC4EAAC1EB6646100C17D75 /* house_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EAAB1EB6646100C17D75 /* house_5.png */; };
+		7EC4EAB11EB8E9B000C17D75 /* HnsIntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EAB01EB8E9B000C17D75 /* HnsIntroScene.swift */; };
+		7EC4EAB51EBC6E3700C17D75 /* bed1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EAB31EBC6E3700C17D75 /* bed1.png */; };
+		7EC4EAB61EBC6E3700C17D75 /* inner.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EAB41EBC6E3700C17D75 /* inner.png */; };
+		7EC4EAB81EBC89A900C17D75 /* intro.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EAB71EBC89A900C17D75 /* intro.plist */; };
+		7EC4EABA1EBCA0E300C17D75 /* HnsIntroHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EAB91EBCA0E300C17D75 /* HnsIntroHandle.swift */; };
+		7EC4EAC01EBDFCD200C17D75 /* HnsMapHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EABD1EBDFCD200C17D75 /* HnsMapHandle.swift */; };
+		7EC4EAC11EBDFCD200C17D75 /* HnsMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EABE1EBDFCD200C17D75 /* HnsMapNode.swift */; };
+		7EC4EAC21EBDFCD200C17D75 /* HnsMapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EABF1EBDFCD200C17D75 /* HnsMapScene.swift */; };
+		7EC4EAC71EBDFE4100C17D75 /* HnsInnerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EAC61EBDFE4100C17D75 /* HnsInnerScene.swift */; };
+		7EC4EAC91EBDFF1200C17D75 /* HnsNpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EAC81EBDFF1200C17D75 /* HnsNpc.swift */; };
+		7EC4EAD01EBE0A0F00C17D75 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC4EACF1EBE0A0F00C17D75 /* libsqlite3.0.tbd */; };
+		7EC4EAD31EBE34AD00C17D75 /* HnsSqlite3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EAD21EBE34AD00C17D75 /* HnsSqlite3.swift */; };
+		7EC4EAD51EBE624B00C17D75 /* HnsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4EAD41EBE624B00C17D75 /* HnsTask.swift */; };
+		7EC4EADA1EBE740500C17D75 /* Ming_Dynasty_Data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EAD91EBE740500C17D75 /* Ming_Dynasty_Data.sqlite */; };
+		7EC4EADC1EBE86C900C17D75 /* talk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EADB1EBE86C900C17D75 /* talk.plist */; };
+		7EC4EAE21EBE8A7000C17D75 /* talk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EADD1EBE8A7000C17D75 /* talk.png */; };
+		7EC4EAE31EBE8A7000C17D75 /* task4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EADE1EBE8A7000C17D75 /* task4.png */; };
+		7EC4EAE41EBE8A7000C17D75 /* task3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EADF1EBE8A7000C17D75 /* task3.png */; };
+		7EC4EAE51EBE8A7000C17D75 /* task2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EAE01EBE8A7000C17D75 /* task2.png */; };
+		7EC4EAE61EBE8A7000C17D75 /* task1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4EAE11EBE8A7000C17D75 /* task1.png */; };
+		7ECDB45E1EB490F9009CBB1B /* alert.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECDB45B1EB490F9009CBB1B /* alert.png */; };
+		7ECDB45F1EB490F9009CBB1B /* alertCancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECDB45C1EB490F9009CBB1B /* alertCancel.png */; };
+		7ECDB4601EB490F9009CBB1B /* alertOk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECDB45D1EB490F9009CBB1B /* alertOk.png */; };
 		7EEA04731D9515AA00422082 /* npc1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA046A1D9515AA00422082 /* npc1.png */; };
 		7EEA04741D9515AA00422082 /* npc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA046B1D9515AA00422082 /* npc2.png */; };
 		7EEA04751D9515AA00422082 /* npc3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA046C1D9515AA00422082 /* npc3.png */; };
@@ -46,16 +68,13 @@
 		7E0456EB1E73289A0049D143 /* captain2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captain2.png; sourceTree = "<group>"; };
 		7E0456EC1E73289A0049D143 /* captain3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captain3.png; sourceTree = "<group>"; };
 		7E0456ED1E73289A0049D143 /* captain4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captain4.png; sourceTree = "<group>"; };
-		7E0456F61E7329170049D143 /* HnsMapHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapHandle.swift; sourceTree = "<group>"; };
 		7E0456FA1E741B290049D143 /* timeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeBackground.png; sourceTree = "<group>"; };
 		7E45A11A1E78460B00D9C903 /* HnsBitMaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsBitMaskType.swift; sourceTree = "<group>"; };
-		7E915B251D879454002A364B /* HnsMapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapScene.swift; sourceTree = "<group>"; };
 		7EBEC28D1EA28E5C00CC6F73 /* house_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_0.png; sourceTree = "<group>"; };
 		7EBEC28E1EA28E5C00CC6F73 /* house_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_1.png; sourceTree = "<group>"; };
 		7EBEC28F1EA28E5C00CC6F73 /* house_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_2.png; sourceTree = "<group>"; };
 		7EBEC2901EA28E5C00CC6F73 /* house_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_4.png; sourceTree = "<group>"; };
 		7EBEC2911EA28E5C00CC6F73 /* house_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_8.png; sourceTree = "<group>"; };
-		7EBEC29E1EA4B43F00CC6F73 /* HnsMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapNode.swift; sourceTree = "<group>"; };
 		7EC265B91D878E2A00E52174 /* Captain_of_Ming_Dynasty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Captain_of_Ming_Dynasty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC265BC1D878E2A00E52174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EC265BE1D878E2A00E52174 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -65,6 +84,33 @@
 		7EC265C71D878E2A00E52174 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EC265CA1D878E2A00E52174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EC265CC1D878E2A00E52174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EC4EA831EB5952D00C17D75 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7EC4EAA91EB5D54C00C17D75 /* alert.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = alert.plist; sourceTree = "<group>"; };
+		7EC4EAAB1EB6646100C17D75 /* house_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_5.png; sourceTree = "<group>"; };
+		7EC4EAB01EB8E9B000C17D75 /* HnsIntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsIntroScene.swift; sourceTree = "<group>"; };
+		7EC4EAB31EBC6E3700C17D75 /* bed1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bed1.png; sourceTree = "<group>"; };
+		7EC4EAB41EBC6E3700C17D75 /* inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inner.png; sourceTree = "<group>"; };
+		7EC4EAB71EBC89A900C17D75 /* intro.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = intro.plist; sourceTree = "<group>"; };
+		7EC4EAB91EBCA0E300C17D75 /* HnsIntroHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsIntroHandle.swift; sourceTree = "<group>"; };
+		7EC4EABD1EBDFCD200C17D75 /* HnsMapHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapHandle.swift; sourceTree = "<group>"; };
+		7EC4EABE1EBDFCD200C17D75 /* HnsMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapNode.swift; sourceTree = "<group>"; };
+		7EC4EABF1EBDFCD200C17D75 /* HnsMapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsMapScene.swift; sourceTree = "<group>"; };
+		7EC4EAC61EBDFE4100C17D75 /* HnsInnerScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsInnerScene.swift; sourceTree = "<group>"; };
+		7EC4EAC81EBDFF1200C17D75 /* HnsNpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsNpc.swift; sourceTree = "<group>"; };
+		7EC4EACC1EBE09A500C17D75 /* HnsSqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HnsSqlite3.h; sourceTree = "<group>"; };
+		7EC4EACF1EBE0A0F00C17D75 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7EC4EAD21EBE34AD00C17D75 /* HnsSqlite3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsSqlite3.swift; sourceTree = "<group>"; };
+		7EC4EAD41EBE624B00C17D75 /* HnsTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnsTask.swift; sourceTree = "<group>"; };
+		7EC4EAD91EBE740500C17D75 /* Ming_Dynasty_Data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ming_Dynasty_Data.sqlite; sourceTree = "<group>"; };
+		7EC4EADB1EBE86C900C17D75 /* talk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = talk.plist; sourceTree = "<group>"; };
+		7EC4EADD1EBE8A7000C17D75 /* talk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talk.png; sourceTree = "<group>"; };
+		7EC4EADE1EBE8A7000C17D75 /* task4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task4.png; sourceTree = "<group>"; };
+		7EC4EADF1EBE8A7000C17D75 /* task3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task3.png; sourceTree = "<group>"; };
+		7EC4EAE01EBE8A7000C17D75 /* task2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task2.png; sourceTree = "<group>"; };
+		7EC4EAE11EBE8A7000C17D75 /* task1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task1.png; sourceTree = "<group>"; };
+		7ECDB45B1EB490F9009CBB1B /* alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert.png; sourceTree = "<group>"; };
+		7ECDB45C1EB490F9009CBB1B /* alertCancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alertCancel.png; sourceTree = "<group>"; };
+		7ECDB45D1EB490F9009CBB1B /* alertOk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alertOk.png; sourceTree = "<group>"; };
 		7EEA046A1D9515AA00422082 /* npc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = npc1.png; sourceTree = "<group>"; };
 		7EEA046B1D9515AA00422082 /* npc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = npc2.png; sourceTree = "<group>"; };
 		7EEA046C1D9515AA00422082 /* npc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = npc3.png; sourceTree = "<group>"; };
@@ -83,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC4EAD01EBE0A0F00C17D75 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +149,7 @@
 		7E78160B1DB106B0006CB5B7 /* 游戏界面 */ = {
 			isa = PBXGroup;
 			children = (
-				7E915B251D879454002A364B /* HnsMapScene.swift */,
-				7E0456F61E7329170049D143 /* HnsMapHandle.swift */,
-				7EBEC29C1EA4B43F00CC6F73 /* HnsMapNode */,
+				7EC4EABC1EBDFCD200C17D75 /* HnsMap */,
 				7EF5AB851E6806EC00B31219 /* HnsTimeLabel */,
 			);
 			name = "游戏界面";
@@ -113,7 +158,11 @@
 		7E915B1F1D879035002A364B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7EC4EAD91EBE740500C17D75 /* Ming_Dynasty_Data.sqlite */,
+				7EC4EAA91EB5D54C00C17D75 /* alert.plist */,
 				7EFDDCF61D93AAAD00FE5ADF /* save.plist */,
+				7EC4EAB71EBC89A900C17D75 /* intro.plist */,
+				7EC4EADB1EBE86C900C17D75 /* talk.plist */,
 				7E915B201D879035002A364B /* Images */,
 			);
 			path = Resources;
@@ -122,6 +171,8 @@
 		7E915B201D879035002A364B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7EC4EAB21EBC6E3700C17D75 /* inner */,
+				7ECDB45A1EB490F9009CBB1B /* alert */,
 				7EBEC28C1EA28E5C00CC6F73 /* house */,
 				7EEA04691D9515AA00422082 /* npc */,
 				7EEA046E1D9515AA00422082 /* captain */,
@@ -140,17 +191,10 @@
 				7EBEC28E1EA28E5C00CC6F73 /* house_1.png */,
 				7EBEC28F1EA28E5C00CC6F73 /* house_2.png */,
 				7EBEC2901EA28E5C00CC6F73 /* house_4.png */,
+				7EC4EAAB1EB6646100C17D75 /* house_5.png */,
 				7EBEC2911EA28E5C00CC6F73 /* house_8.png */,
 			);
 			path = house;
-			sourceTree = "<group>";
-		};
-		7EBEC29C1EA4B43F00CC6F73 /* HnsMapNode */ = {
-			isa = PBXGroup;
-			children = (
-				7EBEC29E1EA4B43F00CC6F73 /* HnsMapNode.swift */,
-			);
-			path = HnsMapNode;
 			sourceTree = "<group>";
 		};
 		7EC265B01D878E2A00E52174 = {
@@ -158,6 +202,7 @@
 			children = (
 				7EC265BB1D878E2A00E52174 /* Captain_of_Ming_Dynasty */,
 				7EC265BA1D878E2A00E52174 /* Products */,
+				7EC4EA821EB5952D00C17D75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,8 +220,11 @@
 				7EC265BC1D878E2A00E52174 /* AppDelegate.swift */,
 				7EC265C21D878E2A00E52174 /* GameViewController.swift */,
 				7E45A11A1E78460B00D9C903 /* HnsBitMaskType.swift */,
+				7EC4EAD41EBE624B00C17D75 /* HnsTask.swift */,
 				7E78160A1DB10698006CB5B7 /* 开始界面 */,
+				7EC4EAAF1EB8E97600C17D75 /* 文字解说 */,
 				7E78160B1DB106B0006CB5B7 /* 游戏界面 */,
+				7EC4EAC31EBDFD3800C17D75 /* 室内界面 */,
 				7EC265C41D878E2A00E52174 /* Main.storyboard */,
 				7EC265C71D878E2A00E52174 /* Assets.xcassets */,
 				7EC265C91D878E2A00E52174 /* LaunchScreen.storyboard */,
@@ -184,6 +232,69 @@
 				7E915B1F1D879035002A364B /* Resources */,
 			);
 			path = Captain_of_Ming_Dynasty;
+			sourceTree = "<group>";
+		};
+		7EC4EA821EB5952D00C17D75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EC4EACF1EBE0A0F00C17D75 /* libsqlite3.0.tbd */,
+				7EC4EA831EB5952D00C17D75 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EC4EAAF1EB8E97600C17D75 /* 文字解说 */ = {
+			isa = PBXGroup;
+			children = (
+				7EC4EAB01EB8E9B000C17D75 /* HnsIntroScene.swift */,
+				7EC4EAB91EBCA0E300C17D75 /* HnsIntroHandle.swift */,
+			);
+			path = "文字解说";
+			sourceTree = "<group>";
+		};
+		7EC4EAB21EBC6E3700C17D75 /* inner */ = {
+			isa = PBXGroup;
+			children = (
+				7EC4EADD1EBE8A7000C17D75 /* talk.png */,
+				7EC4EADE1EBE8A7000C17D75 /* task4.png */,
+				7EC4EADF1EBE8A7000C17D75 /* task3.png */,
+				7EC4EAE01EBE8A7000C17D75 /* task2.png */,
+				7EC4EAE11EBE8A7000C17D75 /* task1.png */,
+				7EC4EAB31EBC6E3700C17D75 /* bed1.png */,
+				7EC4EAB41EBC6E3700C17D75 /* inner.png */,
+			);
+			path = inner;
+			sourceTree = "<group>";
+		};
+		7EC4EABC1EBDFCD200C17D75 /* HnsMap */ = {
+			isa = PBXGroup;
+			children = (
+				7EC4EABF1EBDFCD200C17D75 /* HnsMapScene.swift */,
+				7EC4EABD1EBDFCD200C17D75 /* HnsMapHandle.swift */,
+				7EC4EABE1EBDFCD200C17D75 /* HnsMapNode.swift */,
+			);
+			path = HnsMap;
+			sourceTree = "<group>";
+		};
+		7EC4EAC31EBDFD3800C17D75 /* 室内界面 */ = {
+			isa = PBXGroup;
+			children = (
+				7EC4EAC61EBDFE4100C17D75 /* HnsInnerScene.swift */,
+				7EC4EAC81EBDFF1200C17D75 /* HnsNpc.swift */,
+				7EC4EAD21EBE34AD00C17D75 /* HnsSqlite3.swift */,
+				7EC4EACC1EBE09A500C17D75 /* HnsSqlite3.h */,
+			);
+			path = "室内界面";
+			sourceTree = "<group>";
+		};
+		7ECDB45A1EB490F9009CBB1B /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				7ECDB45B1EB490F9009CBB1B /* alert.png */,
+				7ECDB45C1EB490F9009CBB1B /* alertCancel.png */,
+				7ECDB45D1EB490F9009CBB1B /* alertOk.png */,
+			);
+			path = alert;
 			sourceTree = "<group>";
 		};
 		7EEA04691D9515AA00422082 /* npc */ = {
@@ -279,25 +390,40 @@
 				7EFDDCF31D93868600FE5ADF /* map.jpg in Resources */,
 				7EFDDCF11D93842800FE5ADF /* map_small.jpg in Resources */,
 				7EEA04731D9515AA00422082 /* npc1.png in Resources */,
+				7EC4EAB51EBC6E3700C17D75 /* bed1.png in Resources */,
 				7EBEC2961EA28E5C00CC6F73 /* house_8.png in Resources */,
 				7EBEC2941EA28E5C00CC6F73 /* house_2.png in Resources */,
+				7EC4EAAC1EB6646100C17D75 /* house_5.png in Resources */,
+				7EC4EAE31EBE8A7000C17D75 /* task4.png in Resources */,
 				7E0456F11E73289A0049D143 /* captain4.png in Resources */,
+				7EC4EAE41EBE8A7000C17D75 /* task3.png in Resources */,
+				7EC4EAE61EBE8A7000C17D75 /* task1.png in Resources */,
+				7ECDB45E1EB490F9009CBB1B /* alert.png in Resources */,
 				7EFDDCF51D938CD800FE5ADF /* background.jpg in Resources */,
+				7ECDB45F1EB490F9009CBB1B /* alertCancel.png in Resources */,
+				7EC4EAAA1EB5D54C00C17D75 /* alert.plist in Resources */,
 				7EFDDCF71D93AAAD00FE5ADF /* save.plist in Resources */,
 				7E0456F01E73289A0049D143 /* captain3.png in Resources */,
 				7EBEC2951EA28E5C00CC6F73 /* house_4.png in Resources */,
+				7EC4EAE51EBE8A7000C17D75 /* task2.png in Resources */,
 				7EEA04751D9515AA00422082 /* npc3.png in Resources */,
+				7EC4EADC1EBE86C900C17D75 /* talk.plist in Resources */,
+				7ECDB4601EB490F9009CBB1B /* alertOk.png in Resources */,
 				7EC265BF1D878E2A00E52174 /* GameScene.sks in Resources */,
 				7E0456EF1E73289A0049D143 /* captain2.png in Resources */,
 				7EEA04741D9515AA00422082 /* npc2.png in Resources */,
 				7EBEC2921EA28E5C00CC6F73 /* house_0.png in Resources */,
 				7EBEC2931EA28E5C00CC6F73 /* house_1.png in Resources */,
 				7EEA04761D9515AA00422082 /* npc4.png in Resources */,
+				7EC4EAB61EBC6E3700C17D75 /* inner.png in Resources */,
 				7E0456EE1E73289A0049D143 /* captain1.png in Resources */,
 				7EC265CB1D878E2A00E52174 /* LaunchScreen.storyboard in Resources */,
+				7EC4EADA1EBE740500C17D75 /* Ming_Dynasty_Data.sqlite in Resources */,
 				7EC265C81D878E2A00E52174 /* Assets.xcassets in Resources */,
+				7EC4EAE21EBE8A7000C17D75 /* talk.png in Resources */,
 				7E0456FB1E741B290049D143 /* timeBackground.png in Resources */,
 				7EC265C61D878E2A00E52174 /* Main.storyboard in Resources */,
+				7EC4EAB81EBC89A900C17D75 /* intro.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,16 +434,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC4EAC01EBDFCD200C17D75 /* HnsMapHandle.swift in Sources */,
+				7EC4EAC21EBDFCD200C17D75 /* HnsMapScene.swift in Sources */,
 				7EF5AB8C1E6808AC00B31219 /* HnsTimeLabel.swift in Sources */,
+				7EC4EAC91EBDFF1200C17D75 /* HnsNpc.swift in Sources */,
+				7EC4EAD51EBE624B00C17D75 /* HnsTask.swift in Sources */,
 				7EC265C11D878E2A00E52174 /* GameScene.swift in Sources */,
 				7E45A11B1E78460B00D9C903 /* HnsBitMaskType.swift in Sources */,
-				7EBEC2A01EA4B43F00CC6F73 /* HnsMapNode.swift in Sources */,
-				7E915B261D879454002A364B /* HnsMapScene.swift in Sources */,
+				7EC4EAC71EBDFE4100C17D75 /* HnsInnerScene.swift in Sources */,
 				7EEE63431E7793A700183CDA /* TestCoreGraphics.swift in Sources */,
 				7EC265C31D878E2A00E52174 /* GameViewController.swift in Sources */,
+				7EC4EAB11EB8E9B000C17D75 /* HnsIntroScene.swift in Sources */,
+				7EC4EAC11EBDFCD200C17D75 /* HnsMapNode.swift in Sources */,
+				7EC4EAD31EBE34AD00C17D75 /* HnsSqlite3.swift in Sources */,
+				7EC4EABA1EBCA0E300C17D75 /* HnsIntroHandle.swift in Sources */,
 				7EF5AB8E1E68091800B31219 /* HnsTimeHandle.swift in Sources */,
 				7EC265BD1D878E2A00E52174 /* AppDelegate.swift in Sources */,
-				7E0456F81E7329170049D143 /* HnsMapHandle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +570,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-66.Captain-of-Ming-Dynasty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/vcxhns/Desktop/Captain_of_Ming_Dynasty/Captain_of_Ming_Dynasty/室内界面/HnsSqlite3.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -452,6 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-66.Captain-of-Ming-Dynasty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/vcxhns/Desktop/Captain_of_Ming_Dynasty/Captain_of_Ming_Dynasty/室内界面/HnsSqlite3.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

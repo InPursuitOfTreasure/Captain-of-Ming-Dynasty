@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>是否跳河？</string>
+	<string>是否进入李自成的家？</string>
+	<string>是否进入高迎祥的家？</string>
+	<string>是否进入马守应的家？</string>
+	<string>是否进入贺一龙的家？</string>
+	<string>是否进入罗汝才的家？</string>
+	<string>是否进入张献忠的家？</string>
+	<string>是否进入王二的家？</string>
+	<string>进入矿场开始挖矿？</string>
+	<string>是否开始砍柴？</string>
+</array>
+</plist>

@@ -32,10 +32,11 @@ class HnsHouse
     //    var contactFlag: Bool = false
     //    var contactDirection: Int = 0
     
-    func initWithSize(width: Int, height: Int, type: String, zPosition: Int) -> SKSpriteNode
+    func initWithSize(width: Int, height: Int, type: String, zPosition: Int, tag: Int) -> HnsHouseNode
     {
         let name = "house_" + type
-        let node = SKSpriteNode.init(texture: SKTexture.init(imageNamed: name), size: CGSize.init(width: width, height: height))
+        let node = HnsHouseNode.init(texture: SKTexture.init(imageNamed: name), size: CGSize.init(width: width, height: height))
+        node.tag = tag
         
         node.zPosition = CGFloat(zPosition)
         node.physicsBody = SKPhysicsBody.init(rectangleOf: CGSize.init(width: width - 40, height: height - 60), center: CGPoint.init(x: 0.5, y: 0.4))
@@ -43,7 +44,11 @@ class HnsHouse
         node.physicsBody?.contactTestBitMask = HnsBitMaskType.me
         node.physicsBody?.isDynamic = false
         node.physicsBody?.usesPreciseCollisionDetection = true
-        node.color = .red
         return node
     }
+}
+
+class HnsHouseNode: SKSpriteNode
+{
+    var tag: Int = 0
 }

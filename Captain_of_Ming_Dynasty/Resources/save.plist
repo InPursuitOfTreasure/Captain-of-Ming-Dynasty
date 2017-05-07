@@ -3,20 +3,40 @@
 <plist version="1.0">
 <dict>
 	<key>position</key>
-	<array>
-		<integer>-500</integer>
-		<integer>-500</integer>
-	</array>
+	<dict>
+		<key>x</key>
+		<real>-1656</real>
+		<key>y</key>
+		<integer>-779</integer>
+	</dict>
 	<key>time</key>
 	<dict>
 		<key>year</key>
-		<integer>1628</integer>
+		<real>1628</real>
 		<key>month</key>
-		<integer>1</integer>
+		<integer>4</integer>
 		<key>day</key>
-		<integer>1</integer>
+		<integer>10</integer>
 		<key>hour</key>
-		<integer>1</integer>
+		<integer>9</integer>
+	</dict>
+	<key>good</key>
+	<dict>
+		<key>iron</key>
+		<integer>100</integer>
+		<key>silver</key>
+		<integer>100</integer>
+		<key>wood</key>
+		<integer>100</integer>
+		<key>food</key>
+		<integer>100</integer>
+	</dict>
+	<key>task</key>
+	<dict>
+		<key>tid</key>
+		<integer>0</integer>
+		<key>progress</key>
+		<integer>0</integer>
 	</dict>
 </dict>
 </plist>

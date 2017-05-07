@@ -8,6 +8,14 @@
 
 import SpriteKit
 
+func die()
+{
+    HnsMapScene.mapScene.removeTimer()
+    HnsMapHandle().reset()
+    HnsSqlite3.sqlHandle.deleteData()
+    HnsInnerScene.innerScene.reloadNpc()
+}
+
 class GameScene: SKScene
 {
     override func didMove(to view: SKView)
@@ -56,14 +64,46 @@ class GameScene: SKScene
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        //after touch, turn to the next scene
-        HnsMapScene.hnsMapScene.size = self.size
+    func showGame()
+    {
+        let doors = SKTransition.fade(withDuration: 0.7)
+        self.view?.presentScene(HnsMapScene.mapScene, transition: doors)
+    }
+    
+    func showIntro()
+    {
+        HnsIntroScene.introScene.nextScene = HnsMapScene.mapScene
+        HnsIntroScene.introScene.tag = 0
         
         let doors = SKTransition.fade(withDuration: 0.7)
+        self.view?.presentScene(HnsIntroScene.introScene, transition: doors)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        let filePath: String = NSHomeDirectory() + "/Documents/save.plist"
+        print(filePath)
+        var dic = NSDictionary(contentsOfFile: filePath)
         
-        self.view?.presentScene(HnsMapScene.hnsMapScene, transition: doors)
+        if dic == nil
+        {
+            HnsMapHandle().reset()
+            dic = NSDictionary(contentsOfFile: filePath)
+            showIntro()
+        }
+        else
+        {
+            let time = HnsTimeHandle().getTimeDicAsNumber()
+            if time == 16280301
+            {
+                showIntro()
+            }
+            else
+            {
+                showGame()
+            }
+        }
+        
     }
    
     override func update(_ currentTime: TimeInterval) {

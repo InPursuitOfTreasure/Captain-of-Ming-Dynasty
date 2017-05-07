@@ -18,7 +18,7 @@ class HnsTimeLabel
     static var timeDic: Dictionary<String, Int> = ["year"   : 0,
                                                    "month"  : 0,
                                                    "day"    : 0,
-                                                   "hour"   : 0];
+                                                   "hour"   : 0]
     var hnsHandle: HnsTimeHandle = HnsTimeHandle()
     static let timeLabel = SKSpriteNode.init(texture: SKTexture(imageNamed: "timeBackground"), size: CGSize(width: 270, height: 44))
     static let timeText = SKLabelNode.init(fontNamed:"STKaiti")
