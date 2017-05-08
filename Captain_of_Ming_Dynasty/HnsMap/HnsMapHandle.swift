@@ -97,7 +97,7 @@ class HnsMapHandle
         let time = HnsTimeLabel.timeDic
         
         var dic: NSDictionary? = nil
-        if HnsTask.task.progress == 0 || HnsTask.task.progress == 2
+        if HnsTask.task.progress == 0
         {
             let task = ["tid": HnsTask.task.tid - 1, "progress": 0]
             dic = [ "position": arry,
@@ -189,13 +189,17 @@ class HnsMapHandle
         hour += 1
         if hour > 12
         {
-            ifFinishTask()
             ifDie()
             ifTask()
             hour = 1
             day += 1
             if day > 30
             {
+                for i in 0...HnsInnerScene.innerScene.npcArray.count-1
+                {
+                    let npc = HnsInnerScene.innerScene.npcArray[i]
+                    npc.wealth += 5
+                }
                 day = 1
                 month += 1
                 if month > 12
@@ -231,28 +235,6 @@ class HnsMapHandle
                 HnsMapScene.mapScene.presentIntroScence(tag: i + 9)
                 die()
             }
-        }
-    }
-    
-    func ifFinishTask()
-    {
-        var flag = true
-        if HnsTask.task.progress != 1
-        {
-            return
-        }
-        for i in 0...HnsInnerScene.innerScene.npcArray.count-1
-        {
-            let npc = HnsInnerScene.innerScene.npcArray[i]
-            if npc.dailyTask != 0
-            {
-                flag = false
-            }
-        }
-        if flag
-        {
-            HnsTask.task.progress = 0
-            HnsSqlite3.sqlHandle.loadtask(tid: HnsTask.task.tid+1, task: HnsTask.task)
         }
     }
     

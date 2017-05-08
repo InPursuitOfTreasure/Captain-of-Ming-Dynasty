@@ -31,7 +31,12 @@ class HnsInnerScene: SKScene
                        SKSpriteNode.init(imageNamed: "task3"),
                        SKSpriteNode.init(imageNamed: "task4"),
                        SKSpriteNode.init(imageNamed: "task5"),]
-    
+    var textNode: Array<SKLabelNode> = [
+        SKLabelNode(fontNamed:"STKaiti"),
+        SKLabelNode(fontNamed:"STKaiti"),
+        SKLabelNode(fontNamed:"STKaiti"),
+        ]
+    var textBackground = SKSpriteNode.init(imageNamed: "textBackground_inner")
     func create_background_npcNode()
     {
         DispatchQueue(label: "com.hns.innerQueue").async
@@ -69,6 +74,27 @@ class HnsInnerScene: SKScene
         meNode.zPosition = 150;
         meNode.name = "me"
         self.addChild(meNode)
+        
+        let x = self.frame.midX
+        var y = 300
+        for i in 0 ... textNode.count - 1
+        {
+            textNode[i].fontSize = 24
+            textNode[i].fontColor = SKColor.black
+            textNode[i].position = CGPoint(x: x + 70, y: CGFloat(y))
+            textNode[i].zPosition = 1004
+            y -= 40
+        }
+        textBackground.size = CGSize(width: 200, height: 150)
+        textBackground.position = CGPoint(x: x + 70, y: 270)
+        textBackground.zPosition = 1000
+        textBackground.isHidden = true
+        
+        for i in 0 ... textNode.count - 1
+        {
+            self.addChild(textNode[i])
+        }
+        self.addChild(textBackground)
     }
     
     func createTalk()
@@ -110,6 +136,39 @@ class HnsInnerScene: SKScene
         {
             taskNodeArr[i - 1].isHidden = true
         }
+        let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        self.view?.addGestureRecognizer(longpress)
+    }
+    
+    func ifFinishTask()
+    {
+        var flag = true
+        if HnsTask.task.progress != 1
+        {
+            return
+        }
+        for i in 0...HnsInnerScene.innerScene.npcArray.count-1
+        {
+            let npc = HnsInnerScene.innerScene.npcArray[i]
+            if npc.dailyTask != 0
+            {
+                flag = false
+            }
+        }
+        if flag
+        {
+            HnsTask.task.progress = 0
+            HnsSqlite3.sqlHandle.loadtask(tid: HnsTask.task.tid+1, task: HnsTask.task)
+        }
+    }
+    
+    func longPress()
+    {
+        let npc = npcArray[tag-1]
+        textNode[0].text = "姓名  " + npc.name
+        textNode[1].text = "民心  " + String(npc.will)
+        textNode[2].text = "财富  " + String(npc.wealth)
+        self.textBackground.isHidden = false
     }
     
     func reloadNpc()
@@ -130,6 +189,10 @@ class HnsInnerScene: SKScene
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
+        if textHidden()
+        {
+            return
+        }
         let hnsTouches = touches as NSSet
         let touch = hnsTouches.anyObject() as! UITouch
         let node = atPoint(touch.location(in: self)) as? SKSpriteNode
@@ -150,7 +213,7 @@ class HnsInnerScene: SKScene
         }
         else if node?.name == "task0"
         {
-            var wood = HnsTask.goodDic["wood"]! as Int
+            let wood = HnsTask.goodDic["wood"]! as Int
             if wood > 0
             {
                 talkText.text = taskString(key: "99")
@@ -158,8 +221,8 @@ class HnsInnerScene: SKScene
                 npcArray[tag-1].dailyTask = 0
                 npcArray[tag-1].will += 10
                 taskNodeArr[1].isHidden = true
-                wood -= 1
-                HnsTask.goodDic["wood"] = wood
+                HnsTask.goodDic["wood"] = wood - 10
+                ifFinishTask()
             }
             else
             {
@@ -174,6 +237,7 @@ class HnsInnerScene: SKScene
             npcArray[tag-1].dailyTask = 0
             npcArray[tag-1].will += 5
             taskNodeArr[1].isHidden = true
+            ifFinishTask()
         }
         else if node?.name == "task2"
         {
@@ -189,6 +253,7 @@ class HnsInnerScene: SKScene
                 taskNodeArr[2].isHidden = true
                 HnsTask.goodDic["silver"] = silver - Int(r)
                 HnsTask.goodDic["food"] = food + Int(r * 10)
+                ifFinishTask()
             }
             else
             {
@@ -198,14 +263,16 @@ class HnsInnerScene: SKScene
         }
         else if node?.name == "task3"
         {
-            let food = HnsTask.goodDic["food"]! as Int
-            if food > 0
+            let iron = HnsTask.goodDic["iron"]! as Int
+            if iron > 0
             {
                 talkText.text = taskString(key: "99")
                 talkNode.isHidden = false
                 npcArray[tag-1].dailyTask = 0
+                npcArray[tag-1].will += 10
                 taskNodeArr[3].isHidden = true
-                HnsTask.goodDic["food"] = food - 10
+                HnsTask.goodDic["iron"] = iron - 30
+                ifFinishTask()
             }
             else
             {
@@ -215,15 +282,16 @@ class HnsInnerScene: SKScene
         }
         else if node?.name == "task4"
         {
-            var iron = HnsTask.goodDic["iron"]! as Int
-            if iron > 0
+            let food = HnsTask.goodDic["food"]! as Int
+            if food > 0
             {
                 talkText.text = taskString(key: "99")
                 talkNode.isHidden = false
                 npcArray[tag-1].dailyTask = 0
-                taskNodeArr[3].isHidden = true
-                iron -= 10
-                HnsTask.goodDic["iron"] = iron
+                npcArray[tag-1].will += 15
+                taskNodeArr[4].isHidden = true
+                HnsTask.goodDic["food"] = food - 10
+                ifFinishTask()
             }
             else
             {
@@ -264,5 +332,17 @@ class HnsInnerScene: SKScene
         let filePath: String = Bundle.main.path(forResource: "talk", ofType: "plist")!
         let dic = NSDictionary(contentsOfFile: filePath)
         return dic!.object(forKey: key) as! String
+    }
+    func textHidden() -> Bool
+    {
+        if self.textBackground.isHidden == false
+        {
+            textNode[0].text = ""
+            textNode[1].text = ""
+            textNode[2].text = ""
+            self.textBackground.isHidden = true
+            return true
+        }
+        return false
     }
 }

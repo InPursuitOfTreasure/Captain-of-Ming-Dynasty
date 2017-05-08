@@ -128,7 +128,6 @@ class HnsTask
             tid += 1
         }
         HnsSqlite3.sqlHandle.loadtask(tid: tid, task: HnsTask.task)
-        HnsTask.task.tid = tid
     }
     
     func taskType(taskType: Int) -> String
@@ -140,9 +139,11 @@ class HnsTask
         case 2:
             return "温和交谈"
         case 3:
-            return "周济米粮"
+            return "慷慨解囊"
         case 4:
             return "帮忙挖矿"
+        case 5:
+            return "周济米粮"
         default:
             return ""
         }

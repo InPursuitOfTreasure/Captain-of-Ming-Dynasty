@@ -15,6 +15,8 @@ func die()
     HnsTimeHandle().getTimeDic()
     HnsSqlite3.sqlHandle.deleteData()
     HnsInnerScene.innerScene.reloadNpc()
+    HnsTask().loadTask()
+    HnsTask().loadGoodDic()
 }
 
 class GameScene: SKScene
@@ -95,7 +97,7 @@ class GameScene: SKScene
         else
         {
             let time = HnsTimeHandle().getTimeDicAsNumber()
-            if time == 16280301
+            if time == 16280410
             {
                 showIntro()
             }

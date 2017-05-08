@@ -335,6 +335,8 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
         mapNode.position = hnsHandle.getPosition()
         HnsTimeLabel().updateTimeLabel()
         addTimer()
+        meNode.texture = texture4
+        oldDirection = 0
         
         let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
         self.view?.addGestureRecognizer(longpress)
@@ -370,14 +372,21 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     
     func presentInnerScence(tag: Int)
     {
-        hnsHandle.save()
+        let doors = SKTransition.fade(withDuration: 0.7)
         HnsInnerScene.innerScene.tag = tag
         
-        HnsIntroScene.introScene.nextScene = HnsInnerScene.innerScene
-        HnsIntroScene.introScene.tag = tag
+        if HnsTimeHandle().getTimeDicAsNumber() == 16280410
+        {
+            HnsIntroScene.introScene.nextScene = HnsInnerScene.innerScene
+            HnsIntroScene.introScene.tag = tag
+            
+            self.view?.presentScene(HnsIntroScene.introScene, transition: doors)
+        }
+        else
+        {
+            self.view?.presentScene(HnsInnerScene.innerScene, transition: doors)
+        }
         
-        let doors = SKTransition.fade(withDuration: 0.7)
-        self.view?.presentScene(HnsIntroScene.introScene, transition: doors)
     }
     
     func presentIntroScence(tag: Int)

@@ -38,5 +38,22 @@
 		<key>progress</key>
 		<integer>0</integer>
 	</dict>
+	<key>introNpc</key>
+	<dict>
+		<key>1</key>
+		<integer>0</integer>
+		<key>2</key>
+		<integer>0</integer>
+		<key>3</key>
+		<integer>0</integer>
+		<key>4</key>
+		<integer>0</integer>
+		<key>5</key>
+		<integer>0</integer>
+		<key>6</key>
+		<integer>0</integer>
+		<key>7</key>
+		<integer>0</integer>
+	</dict>
 </dict>
 </plist>

@@ -46,13 +46,13 @@ class HnsSqlite3
             {
                 //pid,type,typeName,name,will,wealth,dailyTask
                 let cType = sqlite3_column_int(stmt, 2)
-                let cName = sqlite3_column_text(stmt, 3)
+                let cName: UnsafePointer<CUnsignedChar> = sqlite3_column_text(stmt, 3)
                 let cWill = sqlite3_column_int(stmt, 4)
                 let cWealth = sqlite3_column_int(stmt, 5)
                 let cDailyTask = sqlite3_column_int(stmt, 6)
                 
                 npc.type = Int(cType)
-                npc.name = String(describing: cName)
+                npc.name = String.init(cString: cName)
                 npc.will = Int(cWill)
                 npc.wealth = Int(cWealth)
                 npc.dailyTask = Int(cDailyTask)
@@ -64,7 +64,6 @@ class HnsSqlite3
     func loadtask(tid: Int, task: HnsTask)
     {
         let searchCount = ("select * from taskDef where tid = " + String(tid)).cString(using: .utf8)
-        print(sqlite3_prepare_v2(db2, searchCount, -1, &stmt, nil))
         if sqlite3_prepare_v2(db2, searchCount, -1, &stmt, nil) == SQLITE_OK
         {
             if sqlite3_step(stmt) == SQLITE_ROW
@@ -82,6 +81,7 @@ class HnsSqlite3
                 task.affect = Int(affect)
                 task.taskType = Int(taskType)
                 task.days = Int(days)
+                task.tid = tid
             }
         }
         sqlite3_finalize(stmt)
