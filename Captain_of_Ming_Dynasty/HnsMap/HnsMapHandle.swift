@@ -80,6 +80,59 @@ class HnsMapHandle
         return position!
     }
     
+    func getTexture(direction: String) -> SKTexture
+    {
+        let filePath = Bundle.main.path(forResource: "caption", ofType: "plist")!
+        let dic = NSDictionary(contentsOfFile: filePath)
+        
+        let str = "caption_" + direction + "0.png"
+        let frameStr = dic?.object(forKey: str) as! String
+        let charset = CharacterSet(charactersIn:"{,} ")
+        let array = frameStr.components(separatedBy: charset)
+        let yNum = 120 - Double(array[4])! as Double
+        
+        let rect = CGRect.init(x: (Double(array[2])! / 177),
+                               y: yNum / 177,
+                               width: (Double(array[8])! / 177),
+                               height: (Double(array[10])! / 177))
+
+        return SKTexture.init(rect: rect, in: hnsTexture)
+    }
+    
+    func getTextureArray(direction: String) -> Array<SKTexture>
+    {
+        let filePath = Bundle.main.path(forResource: "caption", ofType: "plist")!
+        let dic = NSDictionary(contentsOfFile: filePath)
+        
+        let str1 = "caption_" + direction + "1.png"
+        let frameStr1 = dic?.object(forKey: str1) as! String
+        let charset1 = CharacterSet(charactersIn:"{,} ")
+        let array1 = frameStr1.components(separatedBy: charset1)
+        let yNum1 = 120 - Double(array1[4])! as Double
+        
+        let rect1 = CGRect.init(x: (Double(array1[2])! / 177),
+                               y: yNum1 / 177,
+                               width: (Double(array1[8])! / 177),
+                               height: (Double(array1[10])! / 177))
+        
+        let t1 = SKTexture.init(rect: rect1, in: hnsTexture)
+        
+        let str2 = "caption_" + direction + "2.png"
+        let frameStr2 = dic?.object(forKey: str2) as! String
+        let charset2 = CharacterSet(charactersIn:"{,} ")
+        let array2 = frameStr2.components(separatedBy: charset2)
+        let yNum2 = 120 - Double(array2[4])! as Double
+        
+        let rect2 = CGRect.init(x: (Double(array2[2])! / 177),
+                               y: yNum2 / 177,
+                               width: (Double(array2[8])! / 177),
+                               height: (Double(array2[10])! / 177))
+        
+        let t2 = SKTexture.init(rect: rect2, in: hnsTexture)
+        
+        return [t1, t2]
+    }
+    
     func reset()
     {
         let filePath1 = Bundle.main.path(forResource: "save", ofType: "plist")!
@@ -189,7 +242,10 @@ class HnsMapHandle
         hour += 1
         if hour > 12
         {
-            ifDie()
+            if ifDie()
+            {
+                return
+            }
             ifTask()
             hour = 1
             day += 1
@@ -225,17 +281,21 @@ class HnsMapHandle
         HnsTimeLabel.timeDic["hour"]    = hour
     }
     
-    func ifDie()
+    func ifDie() -> Bool
     {
         for i in 0...HnsInnerScene.innerScene.npcArray.count-1
         {
             let npc = HnsInnerScene.innerScene.npcArray[i]
             if npc.will < 20
             {
-                HnsMapScene.mapScene.presentIntroScence(tag: i + 9)
-                die()
+                let scene = HnsPreFightScene()
+                scene.size = HnsMapScene.mapScene.size
+                HnsMapScene.mapScene.presentIntroScence(tag: 17, gotoScene: scene)
+                //die()
+                return true
             }
         }
+        return false
     }
     
     func ifTask()
@@ -249,7 +309,7 @@ class HnsMapHandle
             let array = ["通告:  " + HnsTask.task.intro,
                          HnsTask.task.affectPeople(type: type)+"受到影响",
                          "民心" + String (HnsTask.task.affect),
-                         HnsTask.task.taskType(taskType: HnsTask.task.taskType) + "或许可以挽回民心"]
+                         HnsTask.task.taskType(taskType: HnsTask.task.taskType) + "可以挽回民心"]
             HnsIntroScene.introScene.textArray = array
             HnsIntroScene.introScene.nextScene = HnsMapScene.mapScene
             HnsIntroScene.introScene.tag = -1

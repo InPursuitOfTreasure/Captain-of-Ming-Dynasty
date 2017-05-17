@@ -49,6 +49,8 @@ func setTextArrayByTag(tag: Int) -> Array<String>
         arr = dic!.object(forKey: "end7") as! Array<String>?
     case 16:
         arr = dic!.object(forKey: "end8") as! Array<String>?
+    case 17:
+        arr = dic!.object(forKey: "fight") as! Array<String>?
     default:
         arr = HnsIntroScene.introScene.textArray
     }

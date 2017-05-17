@@ -97,7 +97,7 @@ class GameScene: SKScene
         else
         {
             let time = HnsTimeHandle().getTimeDicAsNumber()
-            if time == 16280410
+            if time == 16280707
             {
                 showIntro()
             }

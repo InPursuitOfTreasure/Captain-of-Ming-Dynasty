@@ -21,7 +21,7 @@ class HnsInnerScene: SKScene
                                    HnsNpc(),
                                    HnsNpc(),]
     var tag = 1
-    var meNode = SKSpriteNode.init(texture: texture3)
+    var meNode = SKSpriteNode.init(texture: HnsMapScene.mapScene.texture3)
     var npcNode = SKSpriteNode(imageNamed: "npc4")
     var bedNode = SKSpriteNode.init(imageNamed: "bed1")
     var talkNode = SKSpriteNode.init(imageNamed: "talk")

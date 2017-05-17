@@ -21,4 +21,10 @@ class HnsBitMaskType
     class var river: UInt32 {
         return 1 << 2
     }
+    class var npc: UInt32 {
+        return 1 << 3
+    }
+    class var cap: UInt32 {
+        return 1 << 4
+    }
 }

@@ -136,5 +136,11 @@
 		<string></string>
 		<string>游戏结束</string>
 	</array>
+	<key>fight</key>
+	<array>
+		<string>民心过低，百姓起义</string>
+		<string></string>
+		<string>遭到袭击，准备战斗</string>
+	</array>
 </dict>
 </plist>

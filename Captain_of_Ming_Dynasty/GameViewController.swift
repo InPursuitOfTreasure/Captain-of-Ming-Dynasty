@@ -16,6 +16,9 @@ class GameViewController: UIViewController
     {
         super.viewDidLoad()
         if let scene = GameScene(fileNamed:"GameScene")
+//        let scene = HnsPreFightScene()
+//        scene.size = self.view.frame.size
+//        if true
         {
             // Configure the view.
             let skView = self.view as! SKView

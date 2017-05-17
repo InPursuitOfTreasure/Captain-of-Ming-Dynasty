@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
+        print(Bundle.main.bundlePath)
         HnsMapScene.mapScene.size = (window?.frame.size)!
         HnsMapScene.mapScene.createMapNode()
         HnsMapScene.mapScene.createMeNode()

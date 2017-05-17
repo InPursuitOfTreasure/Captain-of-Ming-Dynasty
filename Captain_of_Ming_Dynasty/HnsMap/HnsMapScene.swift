@@ -8,10 +8,7 @@
 
 import SpriteKit
 
-let texture1 = SKTexture.init(imageNamed: "captain1")
-let texture2 = SKTexture.init(imageNamed: "captain2")
-let texture3 = SKTexture.init(imageNamed: "captain3")
-let texture4 = SKTexture.init(imageNamed: "captain4")
+let hnsTexture = SKTexture.init(imageNamed: "caption.1")
 
 class HnsMapScene : SKScene, SKPhysicsContactDelegate
 {
@@ -32,6 +29,14 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     
     static let mapScene = HnsMapScene.init()
     
+    let texture2 = HnsMapHandle().getTexture(direction: "left")
+    let texture3 = HnsMapHandle().getTexture(direction: "up")
+    let texture4 = HnsMapHandle().getTexture(direction: "down")
+    
+    let textureLeft = HnsMapHandle().getTextureArray(direction: "left")
+    let textureUp = HnsMapHandle().getTextureArray(direction: "up")
+    let textureDown = HnsMapHandle().getTextureArray(direction: "down")
+    
     //func update need a defaulf value, so give value (368, 207), it is center
     var touchLocation: CGPoint = CGPoint(x: 368, y: 207)
     
@@ -40,7 +45,7 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     
     //captain
     //long long after, maybe use textureSets to do the gif
-    var meNode = SKSpriteNode.init(texture: texture1)
+    var meNode = SKSpriteNode.init(texture: HnsMapHandle().getTexture(direction: "left"))
     
     //alert
     var alertNode = SKSpriteNode.init(imageNamed: "alert")
@@ -128,7 +133,7 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
             direction = 0
             oldDirection = 0
             
-            presentIntroScence(tag: 8)
+            presentIntroScence(tag: 8, gotoScene: GameScene())
             die()
         }
         else if contactTag <= 7
@@ -300,6 +305,7 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     
     func didBegin(_ contact: SKPhysicsContact)
     {
+        meNode.removeAllActions()
         if  contact.bodyA.categoryBitMask == HnsBitMaskType.river
             ||
             contact.bodyB.categoryBitMask == HnsBitMaskType.river
@@ -324,6 +330,7 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
     
     func didEnd(_ contact: SKPhysicsContact)
     {
+        meNode.removeAllActions()
         backDirection = 0
         direction = 0
         oldDirection = 0
@@ -335,7 +342,6 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
         mapNode.position = hnsHandle.getPosition()
         HnsTimeLabel().updateTimeLabel()
         addTimer()
-        meNode.texture = texture4
         oldDirection = 0
         
         let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
@@ -375,7 +381,7 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
         let doors = SKTransition.fade(withDuration: 0.7)
         HnsInnerScene.innerScene.tag = tag
         
-        if HnsTimeHandle().getTimeDicAsNumber() == 16280410
+        if HnsTimeHandle().getTimeDicAsNumber() == 16280707
         {
             HnsIntroScene.introScene.nextScene = HnsInnerScene.innerScene
             HnsIntroScene.introScene.tag = tag
@@ -389,10 +395,10 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
         
     }
     
-    func presentIntroScence(tag: Int)
+    func presentIntroScence(tag: Int, gotoScene: SKScene)
     {
         let doors = SKTransition.fade(withDuration: 0.7)
-        HnsIntroScene.introScene.nextScene = GameScene.init()
+        HnsIntroScene.introScene.nextScene = gotoScene
         HnsIntroScene.introScene.tag = tag
         self.view?.presentScene(HnsIntroScene.introScene, transition: doors)
     }
@@ -484,7 +490,8 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
             if (oldDirection != direction)
             {
                 oldDirection = direction
-                meNode.texture = texture1
+                walk(arr: textureLeft)
+                meNode.xScale = -1
             }
         case -1:
             if x < -256
@@ -495,11 +502,13 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
             {
                 contactTag = 9
                 contactWithID(contactTag: contactTag)
+                meNode.xScale = 1
             }
             if (oldDirection != direction)
             {
                 oldDirection = direction
-                meNode.texture = texture2
+                walk(arr: textureLeft)
+                meNode.xScale = 1
             }
         case 3:
             if y > -1212
@@ -509,7 +518,8 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
             if (oldDirection != direction)
             {
                 oldDirection = direction
-                meNode.texture = texture3
+                walk(arr: textureUp)
+                meNode.xScale = 1
             }
         case -3:
             if y < -81
@@ -519,16 +529,53 @@ class HnsMapScene : SKScene, SKPhysicsContactDelegate
             if (oldDirection != direction)
             {
                 oldDirection = direction
-                meNode.texture = texture4
+                walk(arr: textureDown)
+                meNode.xScale = 1
             }
         default:
             if backDirection != 0
             {
                 self.direction = backDirection
                 oldDirection = backDirection
+                if backDirection == 1
+                {
+                    meNode.xScale = 1
+                }
+            }
+            if oldDirection != 0 && oldDirection != backDirection
+            {
+                wait()
+                oldDirection = 0
             }
         }
         hnsHandle.position = CGPoint(x: x, y: y)
         mapNode.position = hnsHandle.getPosition()
+    }
+    
+    func walk(arr: Array<SKTexture>)
+    {
+        meNode.removeAllActions()
+        meNode.run(SKAction.repeatForever(SKAction.animate(with: arr, timePerFrame: 0.25)), withKey: "walk")
+    }
+    
+    func wait()
+    {
+        meNode.removeAllActions()
+        switch oldDirection
+        {
+        case 1:
+            meNode.texture = texture2
+            meNode.xScale = -1
+        case -1:
+            meNode.texture = texture2
+            meNode.xScale = 1
+        case 3:
+            meNode.texture = texture3
+            meNode.xScale = 1
+        case -3:
+            meNode.texture = texture4
+            meNode.xScale = 1
+        default: break
+        }
     }
 }
